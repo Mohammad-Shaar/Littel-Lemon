@@ -1,0 +1,16 @@
+.footer {
+  margin-top: 3rem;
+  background-color: var(--primary-color-one);
+}
+
+.footer > div {
+  padding-block: 1.8rem;
+}
+
+.footer-logo {
+  width: 100px;
+}
+
+.footer-logo img {
+  width: 100%;
+}

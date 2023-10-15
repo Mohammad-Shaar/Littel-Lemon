@@ -31,7 +31,7 @@ const COMMiNTS = [
     id: "c4",
     img: commint4,
     person: "Antony Clifton",
-    rating: 5,
+    rating: 4,
     com: "Lorem ipsum dolor sit amet contetur adsing elit. Asmenda sed optio offiis ullam! Nisi hic voluptas ut prentium modi.",
   },
 ];

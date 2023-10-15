@@ -3,6 +3,7 @@
 }
 
 .hero-section > div {
+  padding-block: 1.8rem;
   position: relative;
   justify-content: space-between;
   overflow: visible;

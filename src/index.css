@@ -82,6 +82,20 @@ p {
   font-family: "Karla", sans-serif;
 }
 
+.link {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 15px;
+  background-color: var(--primary-color-two);
+  color: var(--highlight-color-two);
+}
+
+.link:hover {
+  background-color: var(--secondary-color-two);
+  transition: 0.3s ease;
+}
+
 /* img {
   width: 100%;
 } */

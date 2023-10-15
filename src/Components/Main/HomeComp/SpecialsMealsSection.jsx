@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import classes from "./SpecialsMealsSection.module.css";
-import Button from "../../UI/Button/Button";
 import MealsCard from "./MealsCard";
 
 const SpecialsMealsSection = () => {
@@ -8,7 +8,9 @@ const SpecialsMealsSection = () => {
       <div className="container">
         <div className={`flex ${classes.heading}`}>
           <h1>this week specials!</h1>
-          <Button>Online Menu</Button>
+          <Link to="/orderonline" className="link">
+            Online Menu
+          </Link>
         </div>
         <MealsCard />
       </div>

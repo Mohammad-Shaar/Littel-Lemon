@@ -1,6 +1,14 @@
 .button {
   background-color: var(--primary-color-two);
-  color: black;
+  color: var(--highlight-color-two);
   padding: 0.6rem 1rem;
+  border: 2px solid var(--primary-color-two);
   border-radius: 20px;
+}
+
+.button:hover {
+  background-color: var(--primary-color-one);
+  color: var(--highlight-color-one);
+  transition: ease 0.3s;
+  border: 2px solid var(--highlight-color-one);
 }

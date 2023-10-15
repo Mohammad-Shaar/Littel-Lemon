@@ -5,15 +5,12 @@ const CommintCard = (props) => {
   const { rating } = props;
   let stars = [];
 
-  if (rating % parseInt(rating) !== 0.5) {
-    for (let i = 0; i < rating; i++) {
-      stars.push(<FaStar />);
-    }
-  } else {
-    for (let i = 0; i < parseInt(rating); i++) {
-      stars.push(<FaStar />);
-    }
-    stars.push(<FaStarHalfAlt />);
+  for (let i = 0; i < parseInt(rating); i++) {
+    stars.push(<FaStar key={i} />);
+  }
+
+  if (rating % parseInt(rating) === 0.5) {
+    stars.push(<FaStarHalfAlt key={rating} />);
   }
 
   return (

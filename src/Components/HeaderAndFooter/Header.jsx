@@ -5,7 +5,7 @@ import logo from "../../assets/Logo.jpg";
 
 const MainNavigation = () => {
   return (
-    <header>
+    <header className={classes.header}>
       <nav className="container flex">
         <Link to="/" className={classes.logo}>
           <img src={logo} />

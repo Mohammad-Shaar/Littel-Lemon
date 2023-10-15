@@ -1,0 +1,39 @@
+.chef-sec {
+  margin-top: 3rem;
+}
+
+.chef-sec > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chef-text h1 {
+  color: var(--primary-color-two);
+}
+
+.chef-text h2 {
+  font-size: 2rem;
+  color: var(--primary-color-one);
+}
+
+.chef-text p {
+  color: var(--primary-color-one);
+}
+
+.chef-text {
+  width: 45%;
+}
+
+.chef-img {
+  width: 42%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chef-img img {
+  width: 100%;
+  border-radius: 20px;
+}
