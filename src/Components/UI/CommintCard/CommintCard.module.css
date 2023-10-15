@@ -1,0 +1,24 @@
+.com-card {
+  background-color: var(--highlight-color-one);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem;
+  margin-top: 2rem;
+}
+
+.com-card img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.com-card h2,
+.com-card p {
+  color: var(--primary-color-one);
+}
+
+.stars {
+  margin-top: 0.4rem;
+  color: var(--primary-color-two);
+}

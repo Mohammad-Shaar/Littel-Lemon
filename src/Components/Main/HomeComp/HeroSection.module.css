@@ -1,0 +1,53 @@
+.hero-section {
+  background-color: var(--primary-color-one);
+}
+
+.hero-section > div {
+  position: relative;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+.text {
+  max-width: 300px;
+}
+
+.text h1 {
+  color: var(--primary-color-two);
+}
+
+.text h2 {
+  margin-top: -1rem;
+  font-size: 2rem;
+  color: var(--highlight-color-one);
+}
+
+.text p {
+  font-family: "Karla", sans-serif;
+  color: var(--highlight-color-one);
+}
+
+.hero-img {
+  position: absolute;
+  right: 8rem;
+  top: 16px;
+}
+
+@media (max-width: 990px) {
+  .hero-img {
+    right: 5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero-img {
+    right: 1.1rem;
+  }
+}
+
+.hero-img img {
+  border-radius: 20px;
+  width: 250px;
+  height: 276px;
+  object-fit: cover;
+}

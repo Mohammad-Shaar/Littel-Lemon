@@ -1,0 +1,22 @@
+.people-com {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "com1 com2 com3 com4";
+  gap: 1rem;
+}
+
+.people-com:nth-child(1) {
+  grid-area: com1;
+}
+
+.people-com:nth-child(2) {
+  grid-area: com2;
+}
+
+.people-com:nth-child(3) {
+  grid-area: com3;
+}
+
+.people-com:nth-child(4) {
+  grid-area: com4;
+}

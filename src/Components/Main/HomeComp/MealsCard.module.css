@@ -1,0 +1,19 @@
+.meals-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "meal1 meal2 meal3";
+  gap: 1.5rem;
+}
+
+.meals-grid:nth-child(1) {
+  grid-area: meal1;
+}
+
+.meals-grid:nth-child(2) {
+  grid-area: meal2;
+}
+
+.meals-grid:nth-child(3) {
+  grid-area: meal3;
+}

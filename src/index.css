@@ -1,0 +1,133 @@
+/* URL Google Fonts here
+========================================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500&family=Markazi+Text:wght@400;500;600;700&display=swap");
+
+/* variables here
+========================================================================= */
+:root {
+  --primary-color-one: #495e57;
+  --primary-color-two: #f4ce14;
+  --secondary-color-one: #ee9972;
+  --secondary-color-two: #fbdabb;
+  --highlight-color-one: #edefee;
+  --highlight-color-two: #333333;
+}
+
+/* General Sitings
+========================================================================= */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-family: "Markazi Text", serif;
+}
+
+@media (max-width: 395px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+a,
+h1,
+h2 {
+  text-transform: capitalize;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+span {
+  display: inline-block;
+}
+
+p {
+  margin: 0.625em 0;
+  font-family: "Karla", sans-serif;
+}
+
+/* img {
+  width: 100%;
+} */
+
+/* General Countainer Sitings
+========================================================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 1rem 8rem;
+}
+
+@media (max-width: 990px) {
+  .container {
+    padding: 0.7rem 5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 0.7rem 1.1rem;
+  }
+}
+
+/* General Flex Sitings
+========================================================================= */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.5em;
+  row-gap: 1.5em;
+  height: 100%;
+}
+
+/* General Grid Sitings
+========================================================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* End of General Sitings
+========================================================================= */
