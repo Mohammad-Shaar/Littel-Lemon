@@ -1,4 +1,5 @@
-import clases from "./PeopleCommint.module.css";
+// import clases from "./PeopleCommint.module.css";
+import SimpleSlider from "../../../UI/Carousel/Carousel";
 import CommintCard from "../../../UI/CommintCard/CommintCard";
 import commint1 from "../../../../assets/commint1.png";
 import commint2 from "../../../../assets/commint2.png";
@@ -38,7 +39,7 @@ const COMMiNTS = [
 
 const PeopleCommint = () => {
   return (
-    <div className={clases["people-com"]}>
+    <SimpleSlider>
       {COMMiNTS.map((com) => (
         <CommintCard
           key={com.id}
@@ -48,7 +49,7 @@ const PeopleCommint = () => {
           com={com.com}
         />
       ))}
-    </div>
+    </SimpleSlider>
   );
 };
 
