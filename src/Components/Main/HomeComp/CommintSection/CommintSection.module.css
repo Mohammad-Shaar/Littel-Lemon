@@ -1,0 +1,24 @@
+.com-sec {
+  margin-top: 3rem;
+  background-color: var(--primary-color-one);
+}
+
+.com-sec h1 {
+  color: var(--highlight-color-one);
+}
+
+/* @media (max-width: 830px) {
+  .com-sec > div {
+    padding-inline: 0;
+  }
+
+  .com-sec h1 {
+    margin-left: 2.5rem;
+  }
+}
+
+@media (max-width: 4500px) {
+  .com-sec h1 {
+    margin-left: 1.1rem;
+  }
+} */

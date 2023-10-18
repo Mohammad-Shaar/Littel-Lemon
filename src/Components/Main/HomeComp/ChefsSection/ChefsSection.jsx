@@ -1,6 +1,6 @@
 import classes from "./ChefsSection.module.css";
-import chefs1 from "../../../assets/chefs1.jpg";
-import chefs2 from "../../../assets/chefs2.jpg";
+import chefs1 from "../../../../assets/chefs1.jpg";
+import chefs2 from "../../../../assets/chefs2.jpg";
 
 const ChefsSection = () => {
   return (
@@ -20,11 +20,7 @@ const ChefsSection = () => {
             excepturi! Rem, exercitationem enim sequi cumque amet, veniam,
             voluptatibus sapiente facilis eos soluta nulla odit asperiores
             blanditiis in. Tempore, dignissimos ipsam. Vero animi dolor vitae id
-            mollitia. Alias consectetur laboriosam nihil at dolorem ea?
-            Aspernatur, eveniet alias aperiam sapiente explicabo beatae.
-            Doloribus corporis voluptas excepturi dolores praesentium natus
-            repellat nesciunt nostrum, tempora magnam impedit quibusdam. Fugiat,
-            molestiae.
+            mollitia.
           </p>
         </div>
         <div className={classes["chef-img"]}>

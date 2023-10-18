@@ -17,3 +17,17 @@
 .meals-grid:nth-child(3) {
   grid-area: meal3;
 }
+
+@media (max-width: 830px) {
+  .meals-grid {
+    grid-template-areas: "meal1 meal2" ". meal3";
+  }
+}
+
+@media (max-width: 500px) {
+  .meals-grid {
+    justify-content: center;
+    grid-auto-columns: 95%;
+    grid-template-areas: "meal1" "meal2" " meal3";
+  }
+}

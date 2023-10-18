@@ -1,16 +1,33 @@
 .hero-section {
   background-color: var(--primary-color-one);
+  position: relative;
 }
 
-.hero-section > div {
+.hero-section .hero {
   padding-block: 1.8rem;
   position: relative;
   justify-content: space-between;
   overflow: visible;
 }
 
+@media (max-width: 680px) {
+  .hero-section .hero {
+    padding-top: 8vh;
+    flex-direction: column;
+  }
+}
+
 .text {
   max-width: 300px;
+}
+
+@media (max-width: 680px) {
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+  }
 }
 
 .text h1 {
@@ -21,6 +38,12 @@
   margin-top: -1rem;
   font-size: 2rem;
   color: var(--highlight-color-one);
+}
+
+@media (max-width: 570px) {
+  .text h2 {
+    font-size: 1.4rem;
+  }
 }
 
 .text p {
@@ -36,13 +59,22 @@
 
 @media (max-width: 990px) {
   .hero-img {
-    right: 5rem;
+    right: 2.5rem;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 680px) {
   .hero-img {
-    right: 1.1rem;
+    z-index: 10;
+    position: static;
+  }
+
+  .layer {
+    width: 100%;
+    height: 23%;
+    background-color: white;
+    position: absolute;
+    bottom: -2px;
   }
 }
 

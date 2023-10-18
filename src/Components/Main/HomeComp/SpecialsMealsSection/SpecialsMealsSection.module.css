@@ -1,0 +1,20 @@
+.specilal-meal-section {
+  margin-top: 4rem;
+}
+
+@media (max-width: 680px) {
+  .specilal-meal-section {
+    margin-top: 0;
+  }
+}
+
+.specilal-meal-section .heading {
+  justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .specilal-meal-section .heading {
+    flex-direction: column;
+    align-items: center;
+  }
+}

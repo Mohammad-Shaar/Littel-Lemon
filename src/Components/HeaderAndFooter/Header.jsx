@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-
+import { FaBars } from "react-icons/fa";
 import classes from "./Header.module.css";
 import logo from "../../assets/Logo.jpg";
 
@@ -73,6 +73,9 @@ const MainNavigation = () => {
             </NavLink>
           </li>
         </ul>
+        <div className={classes["brger-icon"]}>
+          <FaBars />
+        </div>
       </nav>
     </header>
   );

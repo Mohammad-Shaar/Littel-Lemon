@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import Button from "../../UI/Button/Button";
 import classes from "./HeroSection.module.css";
-import img from "../../../assets/hero-img.jpg";
+import img from "../../../../assets/hero-img.jpg";
 
 const HeroSection = () => {
   return (
     <section className={classes["hero-section"]}>
-      <div className="container flex">
+      <div className={`container flex ${classes.hero}`}>
         <div className={classes.text}>
           <h1>little Lemon</h1>
           <h2>Chicago</h2>
@@ -22,6 +21,7 @@ const HeroSection = () => {
           <img src={img} />
         </div>
       </div>
+      <div className={classes.layer}></div>
     </section>
   );
 };
