@@ -1,0 +1,17 @@
+.drop-list {
+  margin-top: 4px;
+  padding-block: 0.5rem;
+  width: 65%;
+  row-gap: 0.5rem !important;
+  justify-items: center;
+  background-color: var(--highlight-color-one);
+}
+
+.one-colum {
+  grid-template-columns: 1fr !important;
+}
+
+.field {
+  cursor: pointer;
+  color: var(--primary-color-one);
+}

@@ -1,0 +1,21 @@
+.form {
+  margin-top: 0.8rem;
+}
+
+.form fieldset {
+  border: 0;
+  display: flex;
+}
+
+.option {
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.option > * {
+  cursor: pointer;
+}
+
+.label {
+  color: var(--highlight-color-one);
+}
