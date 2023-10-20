@@ -8,8 +8,20 @@
   border-radius: 10px;
 }
 
+@media (max-width: 840px) {
+  .drope {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .drope {
+    width: 100%;
+  }
+}
+
 .drope:hover {
-  box-shadow: 0 3px 7px rgb(237 239 238 / 10%);
+  box-shadow: 0 3px 7px rgb(0 0 0 / 40%);
   background-color: var(--primary-color-one);
   color: var(--highlight-color-one);
   transition: ease 0.3s;

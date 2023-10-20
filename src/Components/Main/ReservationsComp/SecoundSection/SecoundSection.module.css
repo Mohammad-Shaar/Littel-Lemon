@@ -1,0 +1,45 @@
+.secound {
+  margin-top: 1.5rem;
+}
+
+.imgs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgs > div {
+  width: 30%;
+}
+
+@media (max-width: 767px) {
+  .therd {
+    display: none;
+  }
+
+  .imgs > div {
+    width: 45%;
+  }
+}
+
+.imgs img {
+  border-radius: 10px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+@media (max-width: 550px) {
+  .imgs > div {
+    width: 48%;
+  }
+
+  .imgs img {
+    height: 160px;
+  }
+}
+
+.center-link {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}

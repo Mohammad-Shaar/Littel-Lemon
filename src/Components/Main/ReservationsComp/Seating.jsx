@@ -3,7 +3,7 @@ import classes from "./Seating.module.css";
 const Seating = () => {
   return (
     <form className={classes.form}>
-      <fieldset id="seating" className="grid">
+      <fieldset className="grid">
         <div className={`flex ${classes.option}`}>
           <label htmlFor="in" className={classes.label}>
             Indoor seating

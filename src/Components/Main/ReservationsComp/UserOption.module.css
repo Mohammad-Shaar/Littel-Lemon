@@ -1,4 +1,20 @@
+.drop-holder {
+  position: relative;
+}
+
+@media (max-width: 550px) {
+  .grid-mob {
+    justify-content: center;
+    grid-template-columns: 90% !important;
+  }
+}
+
 .drop-holder h2 {
   color: var(--highlight-color-one);
   white-space: 5px;
+}
+
+.drop-holder button {
+  gap: 0;
+  flex-wrap: nowrap;
 }

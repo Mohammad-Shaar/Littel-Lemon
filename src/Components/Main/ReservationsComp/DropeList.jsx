@@ -1,7 +1,11 @@
 import classes from "./DropeList.module.css";
 
-const DropeList = ({ title }) => {
-  let gridOneColum;
+const DropeList = (props) => {
+  let gridOneColum = classes["two-colum"];
+  const { title } = props;
+  let minOption = Number(props.minOption);
+  let maxOption = Number(props.maxOption);
+  const occasions = props.occasions;
 
   const clickHandler = (e) => {
     console.log(e.target.textContent);
@@ -10,21 +14,24 @@ const DropeList = ({ title }) => {
   let fields = [];
 
   if (title === "Diners") {
-    fields.push(`1 Diner`);
-    for (let i = 1; i < 10; i++) {
-      fields.push(`${i + 1} ${title}`);
+    if (minOption === 1) {
+      fields.push(`1 Diner`);
+      minOption++;
+    }
+    for (let i = minOption; i <= maxOption; i++) {
+      fields.push(`${i} ${title}`);
     }
   } else if (title === "pm") {
-    for (let i = 5; i <= 10; i++) {
+    for (let i = minOption; i <= maxOption; i++) {
       fields.push(`${i}:00 ${title}`);
     }
   } else {
     gridOneColum = classes["one-colum"];
-    fields = ["Birthday", "Engagement", "Anniversary"];
+    fields = occasions;
   }
 
   return (
-    <div id="dlist" className={`grid ${classes["drop-list"]} ${gridOneColum}`}>
+    <div className={`grid ${classes["drop-list"]} ${gridOneColum}`}>
       {fields.map((field, index) => (
         <p
           onClick={(e) => clickHandler(e)}

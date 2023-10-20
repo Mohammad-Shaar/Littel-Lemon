@@ -1,17 +1,55 @@
 .drop-list {
+  z-index: 50;
+  position: absolute;
   margin-top: 4px;
   padding-block: 0.5rem;
   width: 65%;
   row-gap: 0.5rem !important;
   justify-items: center;
   background-color: var(--highlight-color-one);
+  box-shadow: 0 3px 7px rgb(0 0 0 / 40%);
+  border-radius: 0 0 10px 10px;
+}
+
+@media (max-width: 840px) {
+  .drop-list {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .drop-list {
+    width: 100%;
+  }
+}
+
+.drop-list > * {
+  padding-bottom: 0.2rem;
+  border-bottom: 2px dotted var(--primary-color-one);
 }
 
 .one-colum {
   grid-template-columns: 1fr !important;
 }
 
+.two-colum::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: var(--primary-color-one);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
 .field {
   cursor: pointer;
   color: var(--primary-color-one);
+  transition: 0.3s ease;
+}
+
+.field:hover {
+  transform: scale(1.1);
 }

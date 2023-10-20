@@ -7,9 +7,22 @@
   display: flex;
 }
 
-.option {
+.form .option {
   width: 50%;
   font-size: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 550px) {
+  .form fieldset {
+    flex-direction: column;
+  }
+
+  .form .option {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
 
 .option > * {
@@ -18,4 +31,28 @@
 
 .label {
   color: var(--highlight-color-one);
+}
+
+input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  background-color: var(--highlight-color-one);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  background-color: var(--primary-color-two);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }

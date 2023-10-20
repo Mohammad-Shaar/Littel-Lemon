@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Menu from "./Pages/Menu";
 import Reservations from "./Pages/Reservations";
+import Confirm from "./Pages/Confirm";
 import OrderOnline from "./Pages/OrderOnline";
 import LogIn from "./Pages/LogIn";
 
@@ -18,7 +19,19 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
       { path: "menu", element: <Menu /> },
-      { path: "reservations", element: <Reservations /> },
+      {
+        path: "reservations",
+        children: [
+          {
+            index: true,
+            element: <Reservations />,
+          },
+          {
+            path: "confirm",
+            element: <Confirm />,
+          },
+        ],
+      },
       { path: "orderonline", element: <OrderOnline /> },
       { path: "login", element: <LogIn /> },
     ],

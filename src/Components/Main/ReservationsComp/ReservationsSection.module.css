@@ -2,6 +2,10 @@
   background-color: var(--primary-color-one);
 }
 
+.reservation-sec > div {
+  overflow: visible;
+}
+
 .title {
   color: var(--primary-color-two);
 }
