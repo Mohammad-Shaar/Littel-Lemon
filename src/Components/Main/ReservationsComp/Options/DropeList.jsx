@@ -1,6 +1,18 @@
 import classes from "./DropeList.module.css";
+import { useDispatch } from "react-redux";
+import { reservationAction } from "../../../../Store/reservation";
+import { dropeStateAction } from "../../../../Store/dropeDownState";
+
+const initialValue = {
+  hideDate: true,
+  hideDiner: true,
+  hideTime: true,
+  hideOccasion: true,
+};
 
 const DropeList = (props) => {
+  const dispatch = useDispatch();
+
   let gridOneColum = classes["two-colum"];
   const { title } = props;
   let minOption = Number(props.minOption);
@@ -8,7 +20,8 @@ const DropeList = (props) => {
   const occasions = props.occasions;
 
   const clickHandler = (e) => {
-    console.log(e.target.textContent);
+    dispatch(reservationAction.optionValue(e.target.textContent));
+    dispatch(dropeStateAction.resetState());
   };
 
   let fields = [];

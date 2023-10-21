@@ -1,38 +1,26 @@
-import { useReducer, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { dropeStateAction } from "../../../Store/dropeDownState";
 import classes from "./DropeDown.module.css";
 
-const initialValue = {
-  hideDate: true,
-  hideDiner: true,
-  hideTime: true,
-  hideOccasion: true,
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "date":
-      return { ...state, hideDate: !state.hideDate };
-    case "diner":
-      return { ...state, hideDiner: !state.hideDiner };
-    case "time":
-      return { ...state, hideTime: !state.hideTime };
-    case "occasion":
-      return { ...state, hideOccasion: !state.hideOccasion };
-    default:
-      return state;
-  }
-};
-
 const DropeDown = (props) => {
-  const [hide, dispatchHide] = useReducer(reducer, initialValue);
+  const dispatch = useDispatch();
 
   const dropeHandler = (title) => {
-    dispatchHide({ type: title });
+    switch (title) {
+      case "date":
+        dispatch(dropeStateAction.dateState());
+        break;
+      case "diner":
+        dispatch(dropeStateAction.dinerState());
+        break;
+      case "time":
+        dispatch(dropeStateAction.timeState());
+        break;
+      case "occasion":
+        dispatch(dropeStateAction.occasionState());
+        break;
+    }
   };
-
-  useEffect(() => {
-    props.onHide(hide);
-  }, [hide]);
 
   return (
     <button

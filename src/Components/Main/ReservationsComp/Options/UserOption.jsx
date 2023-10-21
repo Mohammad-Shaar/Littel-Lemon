@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 import classes from "./UserOption.module.css";
 import {
   FaUser,
@@ -13,50 +13,47 @@ import DropeList from "./DropeList";
 const occasionList = ["Birthday", "Engagement", "Anniversary"];
 
 const UserOption = () => {
-  const [hideValues, setHideValues] = useState({});
-
-  const hideDropeHandler = (hide) => {
-    setHideValues(hide);
-  };
+  const hide = useSelector((state) => state.dropeState);
+  const optionValue = useSelector((state) => state.reservation.option);
 
   return (
     <div className={`grid ${classes["grid-mob"]}`}>
       <div className={classes["drop-holder"]}>
         <h2>occasion</h2>
-        <DropeDown title="occasion" onHide={hideDropeHandler}>
+        <DropeDown title="occasion">
           <FaGlassCheers />
-          <p>Occasion</p>
+          <p>{optionValue.occasion}</p>
           <FaAngleDown />
         </DropeDown>
-        {!hideValues.hideOccasion && <DropeList occasions={occasionList} />}
+        {!hide.hideOccasion && <DropeList occasions={occasionList} />}
       </div>
       <div className={classes["drop-holder"]}>
         <h2>number of diners</h2>
-        <DropeDown title="diner" onHide={hideDropeHandler}>
+        <DropeDown title="diner">
           <FaUser />
-          <p>No.of Diners</p>
+          <p>{optionValue.diners}</p>
           <FaAngleDown />
         </DropeDown>
-        {!hideValues.hideDiner && (
+        {!hide.hideDiner && (
           <DropeList title="Diners" minOption="1" maxOption="10" />
         )}
       </div>
       <div className={classes["drop-holder"]}>
         <h2>date</h2>
-        <DropeDown title="date" onHide={hideDropeHandler}>
+        <DropeDown title="date">
           <FaRegCalendarAlt />
-          <p>Select Date</p>
+          <p>{optionValue.date}</p>
           <FaAngleDown />
         </DropeDown>
       </div>
       <div className={classes["drop-holder"]}>
         <h2>time</h2>
-        <DropeDown title="time" onHide={hideDropeHandler}>
+        <DropeDown title="time">
           <FaRegClock />
-          <p>Select Time</p>
+          <p>{optionValue.time}</p>
           <FaAngleDown />
         </DropeDown>
-        {!hideValues.hideTime && (
+        {!hide.hideTime && (
           <DropeList title="pm" minOption="5" maxOption="10" />
         )}
       </div>
