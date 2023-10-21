@@ -5,6 +5,7 @@
 @media (max-width: 550px) {
   .grid-mob {
     justify-content: center;
+    row-gap: 1.6rem !important;
     grid-template-columns: 90% !important;
   }
 }

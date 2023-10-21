@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import classes from "./SecoundSection.module.css";
 import reserv1 from "../../../../assets/reserv1.jpg";
 import reserv2 from "../../../../assets/hero-img.jpg";
@@ -20,9 +19,7 @@ const SecoundSection = () => {
           </div>
         </div>
         <div className={classes["center-link"]}>
-          <Link to="confirm" className="link">
-            Reserve a Table
-          </Link>
+          <button className="button">Confirm Reservation</button>
         </div>
       </div>
     </section>

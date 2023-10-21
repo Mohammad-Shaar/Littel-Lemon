@@ -79,6 +79,11 @@ button {
   background: none;
 }
 
+label,
+input {
+  display: block;
+}
+
 span {
   display: inline-block;
 }
@@ -88,16 +93,19 @@ p {
   font-family: "Karla", sans-serif;
 }
 
-.link {
+.link,
+.button {
+  font-family: "Markazi Text", serif;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 0.4rem 1.1rem;
   border-radius: 15px;
   background-color: var(--primary-color-two);
   color: var(--highlight-color-two);
 }
 
-.link:hover {
+.link:hover,
+.button:hover {
   background-color: var(--secondary-color-two);
   transition: 0.3s ease;
 }
@@ -131,9 +139,10 @@ p {
   align-items: center;
   column-gap: 1.5em;
   row-gap: 1.5em;
-  /* height: 100%; */
 }
 
+/* General Grid Sitings
+========================================================================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

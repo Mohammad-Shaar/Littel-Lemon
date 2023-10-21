@@ -1,0 +1,11 @@
+.input label {
+  color: var(--highlight-color-one);
+  font-size: 1.4rem;
+}
+
+.input input {
+  background-color: var(--highlight-color-one);
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+}

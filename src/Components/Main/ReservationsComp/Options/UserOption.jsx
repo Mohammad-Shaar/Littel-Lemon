@@ -7,7 +7,7 @@ import {
   FaRegClock,
   FaAngleDown,
 } from "react-icons/fa";
-import DropeDown from "../../UI/DropeDown/DropeDown";
+import DropeDown from "../../../UI/DropeDown/DropeDown";
 import DropeList from "./DropeList";
 
 const occasionList = ["Birthday", "Engagement", "Anniversary"];
@@ -57,7 +57,7 @@ const UserOption = () => {
           <FaAngleDown />
         </DropeDown>
         {!hideValues.hideTime && (
-          <DropeList title="pm" minOption="4" maxOption="11" />
+          <DropeList title="pm" minOption="5" maxOption="10" />
         )}
       </div>
     </div>

@@ -1,0 +1,8 @@
+.form-sec {
+  background-color: var(--primary-color-one);
+}
+
+.title {
+  color: var(--primary-color-two);
+  margin-bottom: 0.6rem;
+}
