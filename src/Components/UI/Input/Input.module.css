@@ -1,11 +1,26 @@
-.input label {
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer label {
   color: var(--highlight-color-one);
   font-size: 1.4rem;
 }
 
-.input input {
+.inputContainer input {
   background-color: var(--highlight-color-one);
+  border: 3px solid var(--highlight-color-one);
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.6rem;
   border-radius: 5px;
+}
+
+.inputContainer input.invalid {
+  border: 3px solid var(--secondary-color-one);
+}
+
+.errorMassege {
+  color: var(--secondary-color-one);
+  position: absolute;
+  margin: 0;
 }

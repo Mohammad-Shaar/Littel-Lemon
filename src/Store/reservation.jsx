@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialOption = {
+  occasion: "Occasion",
+  diners: "No.of Diners",
+  date: "Select Date",
+  time: "Select Time",
+};
+
 const reservation = createSlice({
   name: "reservation",
   initialState: {
-    option: {
-      occasion: "Occasion",
-      diners: "No.of Diners",
-      date: "Select Date",
-      time: "Select Time",
-    },
+    option: { ...initialOption },
     hide: true,
   },
   reducers: {
@@ -23,6 +25,9 @@ const reservation = createSlice({
     },
     hide(state, action) {
       state.hide = action.payload;
+    },
+    resetOption(state) {
+      state.option = { ...initialOption };
     },
   },
 });

@@ -11,7 +11,7 @@ const COMMiNTS = [
     id: "c1",
     img: commint1,
     person: "Brandon Ming",
-    rating: 4.5,
+    rating: 5,
     com: "Lorem ipsum dolor sit amet contetur adsing elit. Asmenda sed optio offiis ullam! Nisi hic voluptas ut prentium modi.",
   },
   {
