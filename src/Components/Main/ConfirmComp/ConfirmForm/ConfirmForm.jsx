@@ -1,8 +1,19 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { reservationAction } from "../../../../Store/reservation";
+import { FaExclamationTriangle } from "react-icons/fa";
 import useInput from "../../../../Hooks/use-input";
 import Input from "../../../UI/Input/Input";
+import ConfirmingMessage from "../ConfirmingMessage/ConfirmingMessage";
 import classes from "./ConfirmForm.module.css";
+import UserReserveOption from "./UserReserveOption";
 
 const ConfirmForm = () => {
+  const [showWarning, setShowWarning] = useState(false);
+  const [showConfirmingCard, setShowConfirmingCard] = useState(false);
+  const dispatch = useDispatch();
+  const optionValid = useSelector((state) => state.reservation.allNotValid);
+
   const {
     enterdInput: enterdFirstName,
     inputIsInValid: firstNameInputHasError,
@@ -37,84 +48,120 @@ const ConfirmForm = () => {
     inputBlurHandler: phoneBlurHandler,
     inputChangeHandler: phoneChangeHandler,
     reset: resetPhoneInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => parseInt(value) == value && value.trim() !== "");
+
+  const closeCardHandler = () => {
+    setShowConfirmingCard(false);
+  };
+
+  const allInputsValid =
+    enterdFirstNameIsValid &&
+    enterdLastNameIsValid &&
+    enterdEmailIsValid &&
+    enterdPhoneIsValid;
 
   const submitHandler = (e) => {
     e.preventDefault();
-    resetFirstNameInput();
-    resetLastNameInput();
-    resetEmailInput();
-    resetPhoneInput();
+    setShowWarning(false);
+    if (allInputsValid && optionValid) {
+      dispatch(reservationAction.resetOption());
+      resetFirstNameInput();
+      resetLastNameInput();
+      resetEmailInput();
+      resetPhoneInput();
+      setShowConfirmingCard(true);
+    } else {
+      setShowWarning(true);
+    }
   };
 
   return (
-    <form onSubmit={submitHandler} className={`grid ${classes["grid-mob"]}`}>
-      <Input
-        label="First Name"
-        hasError={firstNameInputHasError}
-        isValid={enterdFirstNameIsValid}
-        onBlur={firstNameBlurHandler}
-        onChange={firstNameChangeHandler}
-        input={{
-          id: "firstName",
-          name: "firstName",
-          type: "text",
-          max: "20",
-          placeholder: "First name",
-          value: enterdFirstName,
-        }}
-      />
-      <Input
-        label="Last Name"
-        hasError={lastNameInputHasError}
-        isValid={enterdLastNameIsValid}
-        onBlur={lastNameBlurHandler}
-        onChange={lastNameChangeHandler}
-        input={{
-          id: "lastName",
-          name: "lastName",
-          type: "text",
-          max: "20",
-          placeholder: "Last name",
-          value: enterdLastName,
-        }}
-      />
-      <Input
-        label="Email"
-        hasError={emailInputHasError}
-        isValid={enterdEmailIsValid}
-        onBlur={emailBlurHandler}
-        onChange={emailChangeHandler}
-        input={{
-          id: "email",
-          name: "email",
-          type: "text",
-          placeholder: "you@gmail.com",
-          value: enterdEmail,
-        }}
-      />
-      <Input
-        label="Phone Number"
-        hasError={phoneInputHasError}
-        isValid={enterdPhoneIsValid}
-        onBlur={phoneBlurHandler}
-        onChange={phoneChangeHandler}
-        input={{
-          id: "phoneNumber",
-          name: "phoneNumber",
-          type: "text",
-          placeholder: "Phone number",
-          value: enterdPhone,
-        }}
-      />
-      <div></div>
-      <div>
-        <label htmlFor="note" className={classes.label}>
-          Sprcial Requests
-        </label>
-        <textarea id="note" className={classes.textarea} name="note"></textarea>
-      </div>
-    </form>
+    <>
+      {showConfirmingCard && <ConfirmingMessage onClose={closeCardHandler} />}
+      <form
+        id="confirm-form"
+        onSubmit={submitHandler}
+        className={`grid ${classes["grid-mob"]}`}
+      >
+        <Input
+          label="First Name"
+          hasError={firstNameInputHasError}
+          onBlur={firstNameBlurHandler}
+          onChange={firstNameChangeHandler}
+          input={{
+            id: "firstName",
+            name: "firstName",
+            autoComplete: "given-name",
+            type: "text",
+            max: "20",
+            placeholder: "First name",
+            value: enterdFirstName,
+          }}
+        />
+        <Input
+          label="Last Name"
+          hasError={lastNameInputHasError}
+          onBlur={lastNameBlurHandler}
+          onChange={lastNameChangeHandler}
+          input={{
+            id: "lastName",
+            name: "lastName",
+            autoComplete: "family-name",
+            type: "text",
+            max: "20",
+            placeholder: "Last name",
+            value: enterdLastName,
+          }}
+        />
+        <Input
+          label="Email"
+          hasError={emailInputHasError}
+          onBlur={emailBlurHandler}
+          onChange={emailChangeHandler}
+          input={{
+            id: "email",
+            name: "email",
+            autoComplete: "email",
+            type: "text",
+            placeholder: "you@gmail.com",
+            value: enterdEmail,
+          }}
+        />
+        <Input
+          label="Phone Number"
+          hasError={phoneInputHasError}
+          onBlur={phoneBlurHandler}
+          onChange={phoneChangeHandler}
+          input={{
+            id: "phoneNumber",
+            name: "phoneNumber",
+            autoComplete: "off",
+            type: "text",
+            placeholder: "Phone number",
+            value: enterdPhone,
+          }}
+        />
+        <UserReserveOption />
+        <div>
+          <label htmlFor="note" className={classes.label}>
+            Special Requests
+          </label>
+          <textarea
+            id="note"
+            className={classes.textarea}
+            name="note"
+          ></textarea>
+        </div>
+        {showWarning && (
+          <p className={`grid-col-span-2 flex ${classes.warning}`}>
+            <FaExclamationTriangle />
+            {!allInputsValid && !optionValid
+              ? `You must choose All your reservation first`
+              : `All required fields must be valid`}
+          </p>
+        )}
+      </form>
+    </>
   );
 };
 

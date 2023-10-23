@@ -7,9 +7,6 @@ const DropeDown = (props) => {
 
   const dropeHandler = (title) => {
     switch (title) {
-      case "date":
-        dispatch(dropeStateAction.dateState());
-        break;
       case "diner":
         dispatch(dropeStateAction.dinerState());
         break;

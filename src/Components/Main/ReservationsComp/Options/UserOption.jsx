@@ -1,13 +1,8 @@
 import { useSelector } from "react-redux";
 import classes from "./UserOption.module.css";
-import {
-  FaUser,
-  FaGlassCheers,
-  FaRegCalendarAlt,
-  FaRegClock,
-  FaAngleDown,
-} from "react-icons/fa";
+import { FaUser, FaGlassCheers, FaRegClock, FaAngleDown } from "react-icons/fa";
 import DropeDown from "../../../UI/DropeDown/DropeDown";
+import DropeDownDatePicker from "../../../UI/DropeDown/DropeDownDatePicker";
 import DropeList from "./DropeList";
 
 const occasionList = ["Birthday", "Engagement", "Anniversary"];
@@ -40,11 +35,7 @@ const UserOption = () => {
       </div>
       <div className={classes["drop-holder"]}>
         <h2>date</h2>
-        <DropeDown title="date">
-          <FaRegCalendarAlt />
-          <p>{optionValue.date}</p>
-          <FaAngleDown />
-        </DropeDown>
+        <DropeDownDatePicker title="date" />
       </div>
       <div className={classes["drop-holder"]}>
         <h2>time</h2>

@@ -1,0 +1,21 @@
+.user-reserve {
+  justify-items: center;
+  gap: 0.4rem !important;
+  margin-bottom: 0 !important;
+}
+
+.user-reserve > * {
+  color: var(--highlight-color-one);
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.show-seating {
+  font-size: 1.2em;
+  margin: 0 0 0.4rem;
+}
+
+.worning {
+  color: var(--secondary-color-one);
+}

@@ -1,28 +1,34 @@
-.form {
+.seating-option {
   margin-top: 0.8rem;
 }
 
-.form fieldset {
+.seating-option fieldset {
   border: 0;
   display: flex;
 }
 
-.form .option {
+.seating-option .option {
   width: 50%;
   font-size: 1.5rem;
   flex-wrap: nowrap;
 }
 
 @media (max-width: 550px) {
-  .form fieldset {
+  .seating-option fieldset {
     margin-left: 5%;
     flex-direction: column;
   }
 
-  .form .option {
+  .seating-option .option {
     width: 100%;
     flex-direction: row-reverse;
     justify-content: flex-end;
+  }
+}
+
+@media (max-width: 300px) {
+  .seating-option fieldset {
+    margin-left: 0;
   }
 }
 

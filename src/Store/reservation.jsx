@@ -12,6 +12,8 @@ const reservation = createSlice({
   initialState: {
     option: { ...initialOption },
     hide: true,
+    clickedOnReserv: false,
+    allNotValid: false,
   },
   reducers: {
     optionValue(state, action) {
@@ -23,11 +25,26 @@ const reservation = createSlice({
         state.option.occasion = action.payload;
       }
     },
+    changeDate(state, action) {
+      state.option.date = action.payload;
+    },
     hide(state, action) {
       state.hide = action.payload;
     },
+    clickedReserv(state) {
+      state.clickedOnReserv = true;
+    },
     resetOption(state) {
       state.option = { ...initialOption };
+      state.clickedOnReserv = false;
+    },
+    notValidToSend: (state) => {
+      const allNotValid =
+        state.option.occasion === initialOption.occasion ||
+        state.option.diners === initialOption.diners ||
+        state.option.date === initialOption.date ||
+        state.option.time === initialOption.time;
+      state.allNotValid = !allNotValid;
     },
   },
 });

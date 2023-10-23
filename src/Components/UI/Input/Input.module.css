@@ -22,5 +22,5 @@
 .errorMassege {
   color: var(--secondary-color-one);
   position: absolute;
-  margin: 0;
+  margin: 2px 0 0 0;
 }

@@ -151,5 +151,34 @@ p {
   margin-bottom: 1.5rem;
 }
 
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+/* Date picker Sitings
+========================================================================= */
+.react-datepicker {
+  margin-top: 4px;
+  position: absolute;
+  z-index: 50;
+  box-shadow: 0 3px 7px rgb(0 0 0 / 40%);
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--primary-color-one);
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: rgba(73, 94, 87, 40%);
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: rgba(73, 94, 87, 40%);
+}
+
+.react-datepicker__day--keyboard-selected:hover {
+  background-color: rgba(73, 94, 87, 40%);
+}
+
 /* End of General Sitings
 ========================================================================= */
