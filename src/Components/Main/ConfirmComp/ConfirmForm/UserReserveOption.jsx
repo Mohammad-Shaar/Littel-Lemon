@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import classes from "./UserReserveOption.module.css";
 
-const UserReserve = () => {
+const UserReserveOption = () => {
   const optionValue = useSelector((state) => state.reservation.option);
   const seatingOption = useSelector((state) => state.confirming.seating);
   const clickedReserv = useSelector(
@@ -46,4 +46,4 @@ const UserReserve = () => {
   );
 };
 
-export default UserReserve;
+export default UserReserveOption;

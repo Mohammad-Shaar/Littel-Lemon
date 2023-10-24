@@ -1,5 +1,11 @@
+import ComingSoon from "../Components/Main/ComingSoon/ComingSoon";
+
 const OrderOnline = () => {
-  return <div>OrderOnline</div>;
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
 };
 
 export default OrderOnline;

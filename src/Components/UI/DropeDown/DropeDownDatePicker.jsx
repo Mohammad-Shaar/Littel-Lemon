@@ -7,7 +7,8 @@ import { reservationAction } from "../../../Store/reservation";
 import "react-datepicker/dist/react-datepicker.css";
 import classes from "./DropeDown.module.css";
 
-function DateButton() {
+function DateButton(props) {
+  const { checked } = props;
   const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState(null);
   const hide = useSelector((state) => state.dropeState);
@@ -26,7 +27,10 @@ function DateButton() {
 
   return (
     <div>
-      <button onClick={clickHandler} className={`flex ${classes.drope}`}>
+      <button
+        onClick={clickHandler}
+        className={`flex ${classes.drope} ${checked ? classes.checked : ""}`}
+      >
         <FaRegCalendarAlt />
         <p>
           {selectedDate ? selectedDate.toLocaleDateString() : dateValue.date}

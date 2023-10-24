@@ -10,7 +10,6 @@ const SecoundSection = () => {
   const dispatch = useDispatch();
   const clickHandler = () => {
     dispatch(reservationAction.clickedReserv());
-    dispatch(reservationAction.notValidToSend());
   };
 
   return (

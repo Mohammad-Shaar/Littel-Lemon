@@ -20,7 +20,8 @@
   }
 }
 
-.drope:hover {
+.drope:hover,
+.drope.checked {
   box-shadow: 0 3px 7px rgb(0 0 0 / 40%);
   background-color: var(--primary-color-one);
   color: var(--highlight-color-one);

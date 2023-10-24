@@ -10,12 +10,18 @@ const occasionList = ["Birthday", "Engagement", "Anniversary"];
 const UserOption = () => {
   const hide = useSelector((state) => state.dropeState);
   const optionValue = useSelector((state) => state.reservation.option);
+  const optionClickedForCheckedClasse = useSelector(
+    (state) => state.reservation.clickedOption
+  );
 
   return (
     <div className={`grid ${classes["grid-mob"]}`}>
       <div className={classes["drop-holder"]}>
         <h2>occasion</h2>
-        <DropeDown title="occasion">
+        <DropeDown
+          title="occasion"
+          checked={optionClickedForCheckedClasse.clickedOccasion}
+        >
           <FaGlassCheers />
           <p>{optionValue.occasion}</p>
           <FaAngleDown />
@@ -24,7 +30,10 @@ const UserOption = () => {
       </div>
       <div className={classes["drop-holder"]}>
         <h2>number of diners</h2>
-        <DropeDown title="diner">
+        <DropeDown
+          title="diner"
+          checked={optionClickedForCheckedClasse.clickedDiners}
+        >
           <FaUser />
           <p>{optionValue.diners}</p>
           <FaAngleDown />
@@ -35,11 +44,17 @@ const UserOption = () => {
       </div>
       <div className={classes["drop-holder"]}>
         <h2>date</h2>
-        <DropeDownDatePicker title="date" />
+        <DropeDownDatePicker
+          title="date"
+          checked={optionClickedForCheckedClasse.clickedDate}
+        />
       </div>
       <div className={classes["drop-holder"]}>
         <h2>time</h2>
-        <DropeDown title="time">
+        <DropeDown
+          title="time"
+          checked={optionClickedForCheckedClasse.clickedTime}
+        >
           <FaRegClock />
           <p>{optionValue.time}</p>
           <FaAngleDown />

@@ -3,6 +3,7 @@ import { dropeStateAction } from "../../../Store/dropeDownState";
 import classes from "./DropeDown.module.css";
 
 const DropeDown = (props) => {
+  const { checked } = props;
   const dispatch = useDispatch();
 
   const dropeHandler = (title) => {
@@ -22,7 +23,7 @@ const DropeDown = (props) => {
   return (
     <button
       onClick={() => dropeHandler(props.title)}
-      className={`flex ${classes.drope}`}
+      className={`flex ${classes.drope} ${checked ? classes.checked : ""}`}
     >
       {props.children}
     </button>

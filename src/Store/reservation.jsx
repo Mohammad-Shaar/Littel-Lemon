@@ -11,6 +11,12 @@ const reservation = createSlice({
   name: "reservation",
   initialState: {
     option: { ...initialOption },
+    clickedOption: {
+      clickedOccasion: false,
+      clickedDiners: false,
+      clickedDate: false,
+      clickedTime: false,
+    },
     hide: true,
     clickedOnReserv: false,
     allNotValid: false,
@@ -19,14 +25,18 @@ const reservation = createSlice({
     optionValue(state, action) {
       if (action.payload.includes("Diner")) {
         state.option.diners = action.payload;
+        state.clickedOption.clickedDiners = true;
       } else if (action.payload.includes("pm")) {
         state.option.time = action.payload;
+        state.clickedOption.clickedTime = true;
       } else {
         state.option.occasion = action.payload;
+        state.clickedOption.clickedOccasion = true;
       }
     },
     changeDate(state, action) {
       state.option.date = action.payload;
+      state.clickedOption.clickedDate = true;
     },
     hide(state, action) {
       state.hide = action.payload;

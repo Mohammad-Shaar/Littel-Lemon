@@ -1,5 +1,11 @@
+import ComingSoon from "../Components/Main/ComingSoon/ComingSoon";
+
 const LogIn = () => {
-  return <div>LogIn</div>;
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
 };
 
 export default LogIn;

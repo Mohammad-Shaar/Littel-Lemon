@@ -5,12 +5,13 @@
 /* variables here
 ========================================================================= */
 :root {
-  --primary-color-one: #495e57;
-  --primary-color-two: #f4ce14;
-  --secondary-color-one: #ee9972;
-  --secondary-color-two: #fbdabb;
-  --highlight-color-one: #edefee;
-  --highlight-color-two: #333333;
+  --primary-color-one: hsl(160, 13%, 33%);
+  --primary-color-two: hsl(50, 91%, 52%);
+  --secondary-color-one: hsl(19, 78%, 69%);
+  --secondary-color-two: hsl(29, 89%, 86%);
+  --highlight-color-one: hsl(150, 6%, 93%);
+  --highlight-color-two: hsl(0, 0%, 20%);
+  --hover-button: hsl(50deg 91% 52% / 70%);
 }
 
 /* General Sitings
@@ -106,7 +107,7 @@ p {
 
 .link:hover,
 .button:hover {
-  background-color: var(--secondary-color-two);
+  background-color: var(--hover-button);
   transition: 0.3s ease;
 }
 

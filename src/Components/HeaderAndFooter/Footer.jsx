@@ -42,7 +42,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className={classes.title}>contact us</p>
+          <p className={classes.title}>contact with us</p>
           <ul className={classes["contact-info"]}>
             <li>
               <p className={classes.location}>
@@ -63,7 +63,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className={classes.title}>connect with us</p>
+          <p className={classes.title}>follow us</p>
           <ul className={classes["social-link"]}>
             <li>
               <Link to="https://www.facebook.com/" target="blank">

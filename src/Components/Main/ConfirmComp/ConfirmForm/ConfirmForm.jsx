@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { reservationAction } from "../../../../Store/reservation";
 import { FaExclamationTriangle } from "react-icons/fa";
@@ -11,8 +11,10 @@ import UserReserveOption from "./UserReserveOption";
 const ConfirmForm = () => {
   const [showWarning, setShowWarning] = useState(false);
   const [showConfirmingCard, setShowConfirmingCard] = useState(false);
+  const specialRequestsRef = useRef("");
   const dispatch = useDispatch();
   const optionValid = useSelector((state) => state.reservation.allNotValid);
+  dispatch(reservationAction.notValidToSend());
 
   const {
     enterdInput: enterdFirstName,
@@ -64,11 +66,11 @@ const ConfirmForm = () => {
     e.preventDefault();
     setShowWarning(false);
     if (allInputsValid && optionValid) {
-      dispatch(reservationAction.resetOption());
       resetFirstNameInput();
       resetLastNameInput();
       resetEmailInput();
       resetPhoneInput();
+      specialRequestsRef.current.value = "";
       setShowConfirmingCard(true);
     } else {
       setShowWarning(true);
@@ -147,6 +149,7 @@ const ConfirmForm = () => {
             Special Requests
           </label>
           <textarea
+            ref={specialRequestsRef}
             id="note"
             className={classes.textarea}
             name="note"

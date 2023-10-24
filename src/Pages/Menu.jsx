@@ -1,5 +1,11 @@
+import ComingSoon from "../Components/Main/ComingSoon/ComingSoon";
+
 const Menu = () => {
-  return <div>Menu</div>;
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
 };
 
 export default Menu;
