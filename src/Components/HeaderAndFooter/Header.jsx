@@ -1,9 +1,18 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { logInAction } from "../../Store/LogInState";
 import classes from "./Header.module.css";
 import logo from "../../assets/Logo.jpg";
 
 const MainNavigation = () => {
+  const dispatch = useDispatch();
+  const logState = useSelector((state) => state.logInState.isLogIn);
+
+  const logHandler = () => {
+    dispatch(logInAction.togelLogCard());
+  };
+
   return (
     <header className={classes.header}>
       <nav className="container flex">
@@ -63,14 +72,9 @@ const MainNavigation = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              logIn
-            </NavLink>
+            <button className={classes.log} onClick={logHandler}>
+              {logState ? "LogOut" : "LogIn"}
+            </button>
           </li>
         </ul>
         <div className={classes["brger-icon"]}>

@@ -7,14 +7,19 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
+  let classForCard = styles.modal;
+
+  switch (props.id) {
+    case "confirmMes":
+      classForCard = classForCard + ` ${styles["confirm-mes"]}`;
+      break;
+    case "formCard":
+      classForCard = classForCard + ` ${styles["modal-form"]}`;
+      break;
+  }
+
   return (
-    <div
-      className={
-        props.id === "confirmMes"
-          ? `${styles.modal} ${styles["confirm-mes"]}`
-          : styles.modal
-      }
-    >
+    <div className={classForCard}>
       <div className={styles.content}>{props.children}</div>
     </div>
   );

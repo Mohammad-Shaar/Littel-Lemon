@@ -44,17 +44,17 @@ const DropeList = (props) => {
   }
 
   return (
-    <div className={`grid ${classes["drop-list"]} ${gridOneColum}`}>
+    <ul className={`grid ${classes["drop-list"]} ${gridOneColum}`}>
       {fields.map((field, index) => (
-        <p
+        <li
           onClick={(e) => clickHandler(e)}
           className={classes.field}
           key={index}
         >
           {field}
-        </p>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

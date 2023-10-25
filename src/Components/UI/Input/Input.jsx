@@ -13,6 +13,9 @@ const Input = (props) => {
     case "email":
       errorMassege = `Email should contain '@'`;
       break;
+    case "password":
+      errorMassege = `should be (4 to 8) character`;
+      break;
     case "phoneNumber":
       errorMassege = `Phone Number is not valid`;
       break;

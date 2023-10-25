@@ -36,9 +36,6 @@ const Footer = () => {
             <li>
               <Link to="/orderonline">order online</Link>
             </li>
-            <li>
-              <Link to="/login">login</Link>
-            </li>
           </ul>
         </div>
         <div>

@@ -8,7 +8,6 @@ import Menu from "./Pages/Menu";
 import Reservations from "./Pages/Reservations";
 import Confirm from "./Pages/Confirm";
 import OrderOnline from "./Pages/OrderOnline";
-import LogIn from "./Pages/LogIn";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +32,6 @@ const router = createBrowserRouter([
         ],
       },
       { path: "orderonline", element: <OrderOnline /> },
-      { path: "login", element: <LogIn /> },
     ],
   },
 ]);

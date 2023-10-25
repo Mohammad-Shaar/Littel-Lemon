@@ -20,7 +20,12 @@
   width: 100%;
 }
 
-.header ul a {
+.log {
+  font-family: "Markazi Text", serif;
+}
+
+.header ul a,
+.log {
   font-size: 1.2rem;
   color: var(--highlight-color-two);
   padding: 0.3rem 0.8rem;
@@ -28,7 +33,8 @@
 }
 
 .header ul .active,
-.header ul a:hover {
+.header ul a:hover,
+.log:hover {
   transition: 0.3s ease;
   color: var(--highlight-color-one);
   background-color: var(--primary-color-one);
