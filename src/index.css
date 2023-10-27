@@ -86,7 +86,7 @@ input {
 }
 
 span {
-  display: inline-block;
+  display: block;
 }
 
 p {

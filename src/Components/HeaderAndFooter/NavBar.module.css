@@ -1,0 +1,50 @@
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 1.2em;
+}
+
+@media (max-width: 780px) {
+  ul.hide {
+    display: none;
+  }
+
+  .header-nav {
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    right: 0;
+    padding: 1.8em;
+    background: hsl(0deg 0% 100%);
+    box-shadow: 0 3px 7px rgb(0 0 0 / 40%);
+    z-index: 1000;
+  }
+}
+
+@supports (backdrop-filter: blur(4rem)) {
+  .header-nav {
+    background: hsl(0deg 0% 100% / 30%);
+    backdrop-filter: blur(4rem);
+  }
+}
+
+.log {
+  font-family: "Markazi Text", serif;
+}
+
+.header-nav a,
+.log {
+  font-size: 1.2rem;
+  color: var(--highlight-color-two);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+}
+
+.header-nav .active,
+.header-nav a:hover,
+.log:hover {
+  transition: 0.3s ease;
+  color: var(--highlight-color-one);
+  background-color: var(--primary-color-one);
+}

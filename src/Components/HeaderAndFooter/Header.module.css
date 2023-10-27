@@ -1,5 +1,10 @@
+.header {
+  position: relative;
+}
+
 .header nav {
   justify-content: space-between;
+  overflow: visible;
 }
 
 @media (max-width: 450px) {
@@ -20,38 +25,13 @@
   width: 100%;
 }
 
-.log {
-  font-family: "Markazi Text", serif;
-}
-
-.header ul a,
-.log {
-  font-size: 1.2rem;
-  color: var(--highlight-color-two);
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-}
-
-.header ul .active,
-.header ul a:hover,
-.log:hover {
-  transition: 0.3s ease;
-  color: var(--highlight-color-one);
-  background-color: var(--primary-color-one);
-}
-
 .brger-icon {
-  width: fit-content;
-  font-size: 1.5rem;
   display: none;
 }
 
 @media (max-width: 780px) {
   .brger-icon {
     display: block;
-  }
-
-  .header ul {
-    display: none;
+    cursor: pointer;
   }
 }
