@@ -16,16 +16,9 @@
     top: 100%;
     right: 0;
     padding: 1.8em;
-    background: hsl(0deg 0% 100%);
+    background: hsl(150 6% 93%);
     box-shadow: 0 3px 7px rgb(0 0 0 / 40%);
     z-index: 1000;
-  }
-}
-
-@supports (backdrop-filter: blur(4rem)) {
-  .header-nav {
-    background: hsl(0deg 0% 100% / 30%);
-    backdrop-filter: blur(4rem);
   }
 }
 
