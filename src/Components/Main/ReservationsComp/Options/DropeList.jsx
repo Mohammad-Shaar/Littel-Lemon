@@ -3,13 +3,6 @@ import { useDispatch } from "react-redux";
 import { reservationAction } from "../../../../Store/reservation";
 import { dropeStateAction } from "../../../../Store/dropeDownState";
 
-const initialValue = {
-  hideDate: true,
-  hideDiner: true,
-  hideTime: true,
-  hideOccasion: true,
-};
-
 const DropeList = (props) => {
   const dispatch = useDispatch();
 

@@ -1,4 +1,3 @@
-// import clases from "./PeopleCommint.module.css";
 import SimpleSlider from "../../../UI/Carousel/Carousel";
 import CommintCard from "../../../UI/CommintCard/CommintCard";
 import commint1 from "../../../../assets/commint1.png";
