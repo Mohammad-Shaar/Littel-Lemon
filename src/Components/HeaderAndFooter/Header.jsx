@@ -7,11 +7,11 @@ import NavBar from "./NavBar";
 
 const MainNavigation = () => {
   const [hideNav, setHideNav] = useState(true);
-  console.log(hideNav);
 
   const togelNav = () => {
     setHideNav(!hideNav);
   };
+
   return (
     <header className={classes.header}>
       <nav className="container flex">

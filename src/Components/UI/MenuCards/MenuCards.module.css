@@ -38,3 +38,10 @@
 .title p {
   margin: 0;
 }
+
+.item-link {
+  text-align: center;
+  color: var(--secondary-color-one);
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
