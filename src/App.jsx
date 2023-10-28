@@ -4,10 +4,13 @@ import RootLayout from "./Pages/RootLayout";
 import ErrorPage from "./Pages/ErrorPage";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Menu from "./Pages/Menu";
 import Reservations from "./Pages/Reservations";
 import Confirm from "./Pages/Confirm";
 import OrderOnline from "./Pages/OrderOnline";
+import RootMenuPage from "./Pages/RootMenuPage";
+import MealsSec from "./Components/Main/MenuComp/MealsSec/MealsSec";
+import DessertSec from "./Components/Main/MenuComp/DessertSec/DessertSec";
+import DrinkSec from "./Components/Main/MenuComp/DrinkSec/DrinkSec";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +19,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
+      {
+        path: "menu",
+        element: <RootMenuPage />,
+        children: [
+          { index: true, element: <MealsSec /> },
+          { path: "desserts", element: <DessertSec /> },
+          { path: "drinks", element: <DrinkSec /> },
+        ],
+      },
       { path: "about", element: <About /> },
-      { path: "menu", element: <Menu /> },
       {
         path: "reservations",
         children: [

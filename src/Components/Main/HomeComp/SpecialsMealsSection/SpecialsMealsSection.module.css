@@ -18,3 +18,9 @@
     align-items: center;
   }
 }
+
+.view-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}

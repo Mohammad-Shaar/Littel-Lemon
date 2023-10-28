@@ -1,0 +1,14 @@
+.meals {
+  margin-top: 2rem;
+}
+
+.meals h1 {
+  color: var(--primary-color-one);
+}
+
+@media (max-width: 769px) {
+  .meals .grid {
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
+  }
+}

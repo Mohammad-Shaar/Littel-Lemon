@@ -1,0 +1,23 @@
+.option-menu {
+  background-color: var(--primary-color-one);
+}
+
+.option-menu > div {
+  flex-direction: column;
+}
+
+.option-menu h1 {
+  color: var(--primary-color-two);
+}
+
+.option-menu a {
+  color: var(--highlight-color-one);
+  font-size: 1.2rem;
+}
+
+.option-menu a.active,
+.option-menu a:hover {
+  transition: 0.3s ease;
+  color: var(--primary-color-two);
+  text-decoration: underline;
+}

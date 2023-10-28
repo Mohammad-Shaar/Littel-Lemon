@@ -6,13 +6,15 @@ const SpecialsMealsSection = () => {
   return (
     <section className={classes["specilal-meal-section"]}>
       <div className="container">
-        <div className={`flex ${classes.heading}`}>
+        <div className={classes.heading}>
           <h1>this week specials!</h1>
-          <Link to="/orderonline" className="link">
-            Online Menu
-          </Link>
         </div>
         <MealsCard />
+        <div className={classes["view-btn"]}>
+          <Link to="/menu" className="link">
+            View Menu
+          </Link>
+        </div>
       </div>
     </section>
   );

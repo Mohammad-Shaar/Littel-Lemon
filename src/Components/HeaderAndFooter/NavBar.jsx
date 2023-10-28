@@ -27,14 +27,6 @@ const NavBar = (props) => {
       </li>
       <li>
         <NavLink
-          to="/about"
-          className={({ isActive }) => (isActive ? classes.active : undefined)}
-        >
-          about
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
           to="/menu"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
@@ -55,6 +47,14 @@ const NavBar = (props) => {
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
           order Online
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? classes.active : undefined)}
+        >
+          about
         </NavLink>
       </li>
       <li>

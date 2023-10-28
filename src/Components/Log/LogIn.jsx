@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logInAction } from "../../Store/LogInState";
 import classes from "./LogIn.module.css";
 import useInput from "../../Hooks/use-input";
@@ -7,7 +7,6 @@ import Input from "../UI/Input/Input";
 
 const LogIn = () => {
   const dispatch = useDispatch();
-  // const logCardState = useSelector((state) => state.logInState.showLogCard);
 
   const {
     enterdInput: enterdFirstName,
@@ -35,6 +34,9 @@ const LogIn = () => {
     inputChangeHandler: passwordChangeHandler,
     reset: resetPasswordInput,
   } = useInput((value) => value.trim().length >= 4 && value.trim().length <= 8);
+
+  const disableBtn =
+    enterdFirstNameIsValid && enterdEmailIsValid && enterdPasswordIsValid;
 
   const submitLogHandler = (e) => {
     e.preventDefault();
@@ -89,7 +91,9 @@ const LogIn = () => {
           }}
         />
         <div className={classes.subBtn}>
-          <button className="button">Submit</button>
+          <button className="button" disabled={!disableBtn}>
+            Submit
+          </button>
         </div>
       </form>
     </Modal>

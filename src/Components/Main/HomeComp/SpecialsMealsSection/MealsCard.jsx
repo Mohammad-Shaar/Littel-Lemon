@@ -1,7 +1,7 @@
 import classes from "./MealsCard.module.css";
 import meal1 from "../../../../assets/meal1.jpg";
 import meal2 from "../../../../assets/meal2.jpg";
-import meal3 from "../../../../assets/meal3.jpg";
+import meal3 from "../../../../assets/desert1.jpg";
 import Card from "../../../UI/Card/Card";
 
 const MEALSDATA = [

@@ -4,7 +4,7 @@ import { reservationAction } from "../../../../Store/reservation";
 import classes from "./SecoundSection.module.css";
 import reserv1 from "../../../../assets/reserv1.jpg";
 import reserv2 from "../../../../assets/reserv2.jpg";
-import reserv3 from "../../../../assets/hero-img.jpg";
+import reserv3 from "../../../../assets/reserv3.jpg";
 
 const SecoundSection = () => {
   const dispatch = useDispatch();

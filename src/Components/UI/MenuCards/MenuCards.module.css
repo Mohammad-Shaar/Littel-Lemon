@@ -1,0 +1,40 @@
+.menu-card {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--highlight-color-one);
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+.img {
+  width: 30%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.img-con img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  display: flex;
+  gap: 0.4rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title > div {
+  justify-content: space-between;
+  column-gap: 0.4em;
+  row-gap: 0.3em;
+}
+
+.title .price {
+  color: var(--secondary-color-one);
+  padding-right: 0.6rem;
+}
+
+.title p {
+  margin: 0;
+}
