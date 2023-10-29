@@ -2,6 +2,10 @@
   background-color: var(--primary-color-one);
 }
 
+.reservation-sec {
+  padding-top: 1.5rem;
+}
+
 .reservation-sec > div {
   overflow: visible;
 }

@@ -1,9 +1,11 @@
-import ComingSoon from "../Components/Main/ComingSoon/ComingSoon";
+import Intro from "../Components/Main/AboutComp/Intro/Intro";
+import LocationSec from "../Components/Main/AboutComp/LocationSec/LocationSec";
 
 const About = () => {
   return (
     <>
-      <ComingSoon />
+      <Intro />
+      <LocationSec />
     </>
   );
 };
