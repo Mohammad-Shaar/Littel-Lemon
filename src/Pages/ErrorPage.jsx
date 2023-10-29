@@ -1,5 +1,6 @@
 import { useRouteError } from "react-router-dom";
 import Header from "../Components/HeaderAndFooter/Header";
+import Footer from "../Components/HeaderAndFooter/Footer";
 import PageContent from "../Components/Main/ErrorContent/ErrorPageContent";
 
 const ErrorPage = () => {
@@ -23,6 +24,7 @@ const ErrorPage = () => {
       <PageContent title={title}>
         <p>{message}</p>
       </PageContent>
+      <Footer />
     </>
   );
 };

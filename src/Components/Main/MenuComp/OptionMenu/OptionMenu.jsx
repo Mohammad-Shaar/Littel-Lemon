@@ -24,7 +24,6 @@ const OptionMenu = () => {
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
-              end
             >
               desserts
             </NavLink>
@@ -35,7 +34,6 @@ const OptionMenu = () => {
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
-              end
             >
               drinks
             </NavLink>
