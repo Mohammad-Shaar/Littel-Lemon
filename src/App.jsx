@@ -13,7 +13,7 @@ import DrinkSec from "./Components/Main/MenuComp/DrinkSec/DrinkSec";
 
 const router = createBrowserRouter([
   {
-    path: "/Littel-Lemon",
+    path: "Littel-Lemon",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [

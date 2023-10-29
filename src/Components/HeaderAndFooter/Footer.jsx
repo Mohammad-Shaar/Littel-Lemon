@@ -22,16 +22,16 @@ const Footer = () => {
           <p className={classes.title}>sitemap</p>
           <ul className={classes[`footer-link`]}>
             <li>
-              <Link to="/">home</Link>
+              <Link to="/Littel-Lemon/">home</Link>
             </li>
             <li>
-              <Link to="/menu">menu</Link>
+              <Link to="/Littel-Lemon/menu">menu</Link>
             </li>
             <li>
-              <Link to="/reservations">reservations</Link>
+              <Link to="/Littel-Lemon/reservations">reservations</Link>
             </li>
             <li>
-              <Link to="/about">about</Link>
+              <Link to="/Littel-Lemon/about">about</Link>
             </li>
           </ul>
         </div>

@@ -18,7 +18,7 @@ const NavBar = (props) => {
     >
       <li>
         <NavLink
-          to="/"
+          to="/Littel-Lemon/"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
           end
         >
@@ -27,7 +27,7 @@ const NavBar = (props) => {
       </li>
       <li>
         <NavLink
-          to="/menu"
+          to="/Littel-Lemon/menu"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
           menu
@@ -35,7 +35,7 @@ const NavBar = (props) => {
       </li>
       <li>
         <NavLink
-          to="/reservations"
+          to="/Littel-Lemon/reservations"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
           reservations
@@ -43,7 +43,7 @@ const NavBar = (props) => {
       </li>
       <li>
         <NavLink
-          to="/about"
+          to="/Littel-Lemon/about"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
           about
