@@ -1,9 +1,0 @@
-.soon {
-  height: 50vh;
-  font-size: 2rem;
-  color: var(--primary-color-one);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
