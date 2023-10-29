@@ -14,7 +14,6 @@ const LogIn = () => {
     inputIsValid: enterdFirstNameIsValid,
     inputBlurHandler: firstNameBlurHandler,
     inputChangeHandler: firstNameChangeHandler,
-    reset: resetFirstNameInput,
   } = useInput((value) => value.trim() !== "");
 
   const {
@@ -23,7 +22,6 @@ const LogIn = () => {
     inputIsValid: enterdEmailIsValid,
     inputBlurHandler: emailBlurHandler,
     inputChangeHandler: emailChangeHandler,
-    reset: resetEmailInput,
   } = useInput((value) => value.trim().includes("@"));
 
   const {
@@ -32,7 +30,6 @@ const LogIn = () => {
     inputIsValid: enterdPasswordIsValid,
     inputBlurHandler: passwordBlurHandler,
     inputChangeHandler: passwordChangeHandler,
-    reset: resetPasswordInput,
   } = useInput((value) => value.trim().length >= 4 && value.trim().length <= 8);
 
   const disableBtn =
