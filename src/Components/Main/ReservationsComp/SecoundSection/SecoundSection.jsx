@@ -22,13 +22,13 @@ const SecoundSection = () => {
         </div>
         <div className={classes.imgs}>
           <div>
-            <img src={reserv1} />
+            <img src={reserv1} loading="lazy" />
           </div>
           <div>
-            <img src={reserv2} />
+            <img src={reserv2} loading="lazy" />
           </div>
           <div className={classes.therd}>
-            <img src={reserv3} />
+            <img src={reserv3} loading="lazy" />
           </div>
         </div>
       </div>

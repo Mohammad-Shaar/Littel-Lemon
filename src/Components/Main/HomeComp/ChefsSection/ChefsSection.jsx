@@ -25,10 +25,10 @@ const ChefsSection = () => {
         </div>
         <div className={classes["chef-img"]}>
           <div>
-            <img src={chefs1} />
+            <img src={chefs1} loading="lazy" />
           </div>
           <div>
-            <img src={chefs2} />
+            <img src={chefs2} loading="lazy" />
           </div>
         </div>
       </div>

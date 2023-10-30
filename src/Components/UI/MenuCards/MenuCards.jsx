@@ -3,7 +3,7 @@ import classes from "./MenuCards.module.css";
 const MenuCards = (props) => {
   return (
     <div className={classes["menu-card"]}>
-      <img src={props.img} className={classes.img} />
+      <img src={props.img} className={classes.img} loading="lazy" />
       <div className={classes.title}>
         <div className="flex">
           <h2>{props.title}</h2>

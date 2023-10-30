@@ -18,7 +18,7 @@ const HeroSection = () => {
           </Link>
         </div>
         <div className={classes["hero-img"]}>
-          <img src={img} />
+          <img src={img} loading="lazy" />
         </div>
       </div>
       <div className={classes.layer}></div>

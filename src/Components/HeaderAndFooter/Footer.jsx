@@ -4,10 +4,10 @@ import {
   FaInstagram,
   FaTwitter,
   FaYoutube,
-  FaLocationArrow,
   FaEnvelope,
   FaPhoneAlt,
 } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import classes from "./Footer.module.css";
 import footerLogo from "../../assets/footer-logo.png";
 
@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className={classes.footer}>
       <div className={`container flex ${classes["footer-con"]}`}>
         <div className={classes["footer-logo"]}>
-          <img src={footerLogo} />
+          <img src={footerLogo} loading="lazy" />
         </div>
         <div>
           <p className={classes.title}>sitemap</p>
@@ -40,7 +40,7 @@ const Footer = () => {
           <ul className={classes["contact-info"]}>
             <li>
               <p className={classes.location}>
-                <FaLocationArrow /> 678 Pisa Ava, Chicago, IL 60611
+                <FaLocationDot /> 678 Pisa Ava, Chicago, IL 60611
               </p>
             </li>
             <li>

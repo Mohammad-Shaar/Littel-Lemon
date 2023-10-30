@@ -11,7 +11,7 @@
 }
 
 .intro-text {
-  max-width: 400px;
+  width: 45%;
 }
 
 @media (max-width: 750px) {
@@ -39,18 +39,21 @@
 }
 
 @media (max-width: 750px) {
+  .intro-text,
   .intro img {
     width: 80%;
   }
 }
 
 @media (max-width: 450px) {
+  .intro-text,
   .intro img {
     width: 90%;
   }
 }
 
 @media (max-width: 350px) {
+  .intro-text,
   .intro img {
     width: 100%;
   }

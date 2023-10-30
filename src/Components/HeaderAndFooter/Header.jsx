@@ -12,13 +12,17 @@ const MainNavigation = () => {
     setHideNav(!hideNav);
   };
 
+  const closeNav = () => {
+    setHideNav(true);
+  };
+
   return (
     <header className={classes.header}>
       <nav className="container flex">
-        <Link to="/" className={classes.logo}>
+        <Link to="/Littel-Lemon/" className={classes.logo}>
           <img src={logo} />
         </Link>
-        <NavBar hideNav={hideNav} />
+        <NavBar hideNav={hideNav} onClick={closeNav} />
         <div className={classes["brger-icon"]} onClick={togelNav}>
           <BurgerMenu open={hideNav} />
         </div>

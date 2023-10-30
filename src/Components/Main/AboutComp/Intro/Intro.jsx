@@ -3,7 +3,7 @@ import introImg from "../../../../assets/about.jpg";
 
 const Intro = () => {
   return (
-    <section className={classes.intro}>
+    <section id="About" className={classes.intro}>
       <div className={`container flex ${classes["intro-con"]}`}>
         <div className={classes["intro-text"]}>
           <h1>About us</h1>

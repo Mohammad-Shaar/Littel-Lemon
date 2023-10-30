@@ -7,7 +7,7 @@ const NavBar = (props) => {
   const dispatch = useDispatch();
   const logState = useSelector((state) => state.logInState.isLogIn);
 
-  const logHandler = () => {
+  const logHandler = (props) => {
     dispatch(logInAction.togelLogCard());
   };
   return (
@@ -16,7 +16,7 @@ const NavBar = (props) => {
         props.hideNav ? classes.hide : ""
       }`}
     >
-      <li>
+      <li onClick={props.onClick}>
         <NavLink
           to="/Littel-Lemon/"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
@@ -25,7 +25,7 @@ const NavBar = (props) => {
           home
         </NavLink>
       </li>
-      <li>
+      <li onClick={props.onClick}>
         <NavLink
           to="/Littel-Lemon/menu"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
@@ -33,7 +33,7 @@ const NavBar = (props) => {
           menu
         </NavLink>
       </li>
-      <li>
+      <li onClick={props.onClick}>
         <NavLink
           to="/Littel-Lemon/reservations"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
@@ -41,7 +41,7 @@ const NavBar = (props) => {
           reservations
         </NavLink>
       </li>
-      <li>
+      <li onClick={props.onClick}>
         <NavLink
           to="/Littel-Lemon/about"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
@@ -49,7 +49,7 @@ const NavBar = (props) => {
           about
         </NavLink>
       </li>
-      <li>
+      <li onClick={props.onClick}>
         <button className={classes.log} onClick={logHandler}>
           {logState ? "LogOut" : "LogIn"}
         </button>
