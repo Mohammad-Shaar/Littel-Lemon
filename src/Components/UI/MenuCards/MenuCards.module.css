@@ -12,11 +12,6 @@
   border-radius: 10px;
 }
 
-.img-con img {
-  width: 100%;
-  object-fit: cover;
-}
-
 .title {
   display: flex;
   gap: 0.4rem;
