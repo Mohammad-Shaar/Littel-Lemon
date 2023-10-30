@@ -16,7 +16,7 @@ const CommintCard = (props) => {
   return (
     <div className={classes["com-card"]}>
       <div>
-        <img src={props.img} loading="lazy" />
+        <img src={props.img} />
       </div>
       <h2>{props.person}</h2>
       <div className={classes.stars}>{stars.map((star) => star)}</div>
