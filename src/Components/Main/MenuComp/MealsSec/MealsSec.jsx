@@ -1,66 +1,45 @@
+import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
 import classes from "./MealsSec.module.css";
-import meal1 from "../../../../assets/meal1.jpg";
-import meal2 from "../../../../assets/meal2.jfif";
-import meal3 from "../../../../assets/meal3.jfif";
-import meal4 from "../../../../assets/meal2.jpg";
-import meal5 from "../../../../assets/meal5.jfif";
-
-const OURMEALS = [
-  {
-    id: "meal1",
-    title: "Caesar salad",
-    price: 9.99,
-    img: meal1,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, unde reprehenderit rem.",
-  },
-  {
-    id: "meal2",
-    title: "Crisp",
-    price: 6.99,
-    img: meal2,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, unde reprehenderit rem.",
-  },
-  {
-    id: "meal3",
-    title: "chicken",
-    price: 8.5,
-    img: meal3,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, unde reprehenderit rem.",
-  },
-  {
-    id: "meal4",
-    title: "bruchetta",
-    price: 5.99,
-    img: meal4,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, unde reprehenderit rem.",
-  },
-  {
-    id: "meal5",
-    title: "rice",
-    price: 11,
-    img: meal5,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, unde reprehenderit rem.",
-  },
-];
 
 const MealsSec = () => {
+  const { meals, isLodding, hasError } = useFetch(
+    "http://localhost:3000/menu?category=meals"
+  );
+
+  const mealsList =
+    meals.length !== 0
+      ? meals.map((meal) => (
+          <MenuCards
+            key={meal.id}
+            title={meal.title}
+            price={meal.price}
+            img={meal.img}
+            desc={meal.desc}
+            id={meal.id}
+          />
+        ))
+      : !isLodding &&
+        !hasError && (
+          <p className={classes["p-center"]}>
+            Sorry, No meals avilable right now
+          </p>
+        );
+
+  let content;
+  if (isLodding) {
+    content = <p className={classes.loading}>Lodding...</p>;
+  }
+  if (hasError) {
+    content = <p className={classes["p-center"]}>{hasError}</p>;
+  }
+
   return (
     <section className={classes.meals}>
       <div className="container">
         <h1>meals:</h1>
-        <div className={`grid ${classes.grid}`}>
-          {OURMEALS.map((meal) => (
-            <MenuCards
-              key={meal.id}
-              title={meal.title}
-              price={meal.price}
-              img={meal.img}
-              desc={meal.desc}
-              id={meal.id}
-            />
-          ))}
-        </div>
+        <div className={`grid ${classes.grid}`}>{mealsList}</div>
+        {content}
       </div>
     </section>
   );
