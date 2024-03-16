@@ -27,4 +27,5 @@ In This project I applied all the skills and concepts I had learned so far, And 
 - How to use props to pass data and events between components
 - How to use hooks to add state and effects to functional components.
 - Hooks also allowed me to create my own custom hook, which was a fun and challenging experience.
-- Finally, I built a professional-looking form with basic validation.
+- I used json-server to simulate a RESTful API using a JSON file as the data source.
+- Finally, I built a professional-looking "Form" with basic validation for LogIn.
