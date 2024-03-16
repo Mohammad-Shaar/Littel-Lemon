@@ -11,6 +11,7 @@ const LogOut = () => {
   };
 
   const logOutHandler = () => {
+    localStorage.removeItem("isLogged");
     dispatch(logInAction.logOut());
     dispatch(logInAction.togelLogCard());
   };

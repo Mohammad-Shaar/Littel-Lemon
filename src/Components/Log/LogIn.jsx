@@ -62,7 +62,7 @@ const LogIn = () => {
       if (!response.ok) {
         throw new Error("");
       }
-
+      localStorage.setItem("isLogged", "1");
       setIsSubmiting(false);
       dispatch(logInAction.logIn());
       dispatch(logInAction.togelLogCard());

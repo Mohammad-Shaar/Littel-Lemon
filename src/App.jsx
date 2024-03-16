@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { logInAction } from "./Store/LogInState";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import RootLayout from "./Pages/RootLayout";
@@ -40,6 +43,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const loginInformation = localStorage.getItem("isLogged");
+    if (loginInformation === "1") {
+      dispatch(logInAction.logIn());
+    }
+  }, []);
+
   return <RouterProvider router={router} />;
 }
 
