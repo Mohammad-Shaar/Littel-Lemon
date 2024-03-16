@@ -31,12 +31,20 @@
 }
 
 .subBtn {
+  position: relative;
   padding-top: 0.4rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .subBtn button:disabled {
   cursor: not-allowed;
   background-color: #ccc;
+}
+
+.errorMassege {
+  color: var(--secondary-color-one);
+  margin: -18px 0 8px 0;
 }

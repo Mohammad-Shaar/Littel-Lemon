@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logInAction } from "../../Store/LogInState";
 import classes from "./LogIn.module.css";
@@ -7,6 +8,8 @@ import Input from "../UI/Input/Input";
 
 const LogIn = () => {
   const dispatch = useDispatch();
+  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [hasError, setHasError] = useState(null);
 
   const {
     enterdInput: enterdFirstName,
@@ -33,12 +36,40 @@ const LogIn = () => {
   } = useInput((value) => value.trim().length >= 4 && value.trim().length <= 8);
 
   const disableBtn =
-    enterdFirstNameIsValid && enterdEmailIsValid && enterdPasswordIsValid;
+    enterdFirstNameIsValid &&
+    enterdEmailIsValid &&
+    enterdPasswordIsValid &&
+    !isSubmiting;
 
-  const submitLogHandler = (e) => {
+  const submitLogHandler = async (e) => {
     e.preventDefault();
-    dispatch(logInAction.logIn());
-    dispatch(logInAction.togelLogCard());
+
+    try {
+      setHasError(null);
+      setIsSubmiting(true);
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        body: JSON.stringify({
+          firsName: enterdFirstName,
+          email: enterdEmail,
+          password: enterdPassword,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("");
+      }
+
+      setIsSubmiting(false);
+      dispatch(logInAction.logIn());
+      dispatch(logInAction.togelLogCard());
+    } catch (err) {
+      setHasError("something went wrong!");
+    }
+    setIsSubmiting(false);
   };
 
   return (
@@ -88,8 +119,9 @@ const LogIn = () => {
           }}
         />
         <div className={classes.subBtn}>
+          {hasError && <p className={classes.errorMassege}>{hasError}</p>}
           <button className="button" disabled={!disableBtn}>
-            Submit
+            {isSubmiting && !hasError ? "Submiting..." : "Submit"}
           </button>
         </div>
       </form>
