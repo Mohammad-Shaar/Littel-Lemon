@@ -13,6 +13,7 @@ import RootMenuPage from "./Pages/RootMenuPage";
 import MealsSec from "./Components/Main/MenuComp/MealsSec/MealsSec";
 import DessertSec from "./Components/Main/MenuComp/DessertSec/DessertSec";
 import DrinkSec from "./Components/Main/MenuComp/DrinkSec/DrinkSec";
+import ItemCard from "./Components/UI/ItemCard/ItemCard";
 
 const router = createBrowserRouter([
   {
@@ -25,9 +26,24 @@ const router = createBrowserRouter([
         path: "menu",
         element: <RootMenuPage />,
         children: [
-          { index: true, element: <MealsSec /> },
-          { path: "desserts", element: <DessertSec /> },
-          { path: "drinks", element: <DrinkSec /> },
+          {
+            path: ":id",
+            element: <MealsSec />,
+          },
+          {
+            index: true,
+            element: <MealsSec />,
+          },
+          {
+            path: "desserts",
+            element: <DessertSec />,
+            children: [{ path: ":id", element: <ItemCard /> }],
+          },
+          {
+            path: "drinks",
+            element: <DrinkSec />,
+            children: [{ path: ":id", element: <ItemCard /> }],
+          },
         ],
       },
       { path: "about", element: <About /> },

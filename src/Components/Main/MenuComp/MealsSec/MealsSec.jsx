@@ -38,7 +38,7 @@ const MealsSec = () => {
     <section className={classes.meals}>
       <div className="container">
         <h1>meals:</h1>
-        <div className={`grid ${classes.grid}`}>{mealsList}</div>
+        <ul className={`grid ${classes.grid}`}>{mealsList}</ul>
         {content}
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
 import classes from "./DessertSec.module.css";
@@ -35,13 +36,16 @@ const MealsSec = () => {
   }
 
   return (
-    <section className={classes.meals}>
-      <div className="container">
-        <h1>deserts:</h1>
-        <div className={`grid ${classes.grid}`}>{mealsList}</div>
-        {content}
-      </div>
-    </section>
+    <>
+      <Outlet />
+      <section className={classes.meals}>
+        <div className="container">
+          <h1>deserts:</h1>
+          <ul className={`grid ${classes.grid}`}>{mealsList}</ul>
+          {content}
+        </div>
+      </section>
+    </>
   );
 };
 
