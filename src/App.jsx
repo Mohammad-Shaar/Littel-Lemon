@@ -27,11 +27,11 @@ const router = createBrowserRouter([
         element: <RootMenuPage />,
         children: [
           {
-            path: ":id",
+            index: true,
             element: <MealsSec />,
           },
           {
-            index: true,
+            path: ":id",
             element: <MealsSec />,
           },
           {

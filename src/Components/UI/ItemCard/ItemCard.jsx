@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useFetch from "../../../Hooks/use-fetch";
 import Modal from "../Card/Modal";
 
@@ -15,6 +15,7 @@ const ItemCard = () => {
   if (hasError) {
     content = <p>{hasError}</p>;
   }
+
   const mealDetails =
     meals.length !== 0
       ? meals[0]
@@ -26,8 +27,15 @@ const ItemCard = () => {
 
   return (
     <Modal onClose={closeHandler}>
-      {!content && <p>{mealDetails.id}</p>}
       {content}
+      {!content && (
+        <>
+          <p>{mealDetails.id}</p>
+        </>
+      )}
+      <Link to=".." className="link">
+        Cencel
+      </Link>
     </Modal>
   );
 };

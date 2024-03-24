@@ -11,7 +11,9 @@ const MenuCards = (props) => {
           <p className={classes.price}>${props.price.toFixed(2)}</p>
         </div>
         <p>{props.desc}</p>
-        <Link to={`${props.id}`}>order</Link>
+        <Link to={`${props.id}`} className={`link ${classes.details}`}>
+          View Details
+        </Link>
       </div>
     </li>
   );

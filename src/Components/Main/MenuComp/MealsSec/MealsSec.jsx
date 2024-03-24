@@ -1,8 +1,11 @@
+import { useParams } from "react-router-dom";
 import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
 import classes from "./MealsSec.module.css";
+import ItemCard from "../../../UI/ItemCard/ItemCard";
 
 const MealsSec = () => {
+  const { id } = useParams();
   const { meals, isLodding, hasError } = useFetch(
     "http://localhost:3000/menu?category=meals"
   );
@@ -35,13 +38,16 @@ const MealsSec = () => {
   }
 
   return (
-    <section className={classes.meals}>
-      <div className="container">
-        <h1>meals:</h1>
-        <ul className={`grid ${classes.grid}`}>{mealsList}</ul>
-        {content}
-      </div>
-    </section>
+    <>
+      {id && <ItemCard />}
+      <section className={classes.meals}>
+        <div className="container">
+          <h1>meals:</h1>
+          <ul className={`grid ${classes.grid}`}>{mealsList}</ul>
+          {content}
+        </div>
+      </section>
+    </>
   );
 };
 

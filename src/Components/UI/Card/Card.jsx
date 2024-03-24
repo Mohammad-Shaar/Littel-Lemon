@@ -2,7 +2,7 @@ import classes from "./Card.module.css";
 
 const Card = (props) => {
   return (
-    <div className={classes.card}>
+    <li className={classes.card}>
       <div>
         <img src={props.img} loading="lazy" />
       </div>
@@ -11,7 +11,7 @@ const Card = (props) => {
         <p className={classes.price}>${props.price}</p>
       </div>
       <p className={classes.description}>{props.description}</p>
-    </div>
+    </li>
   );
 };
 

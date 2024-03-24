@@ -71,9 +71,10 @@
   color: var(--primary-color-two);
 }
 
-.contact-info p {
+.contact-info a {
   display: flex;
-  column-gap: 8px;
+  margin-block: 4px;
+  column-gap: 10px;
   align-items: center;
 }
 

@@ -39,20 +39,20 @@ const Footer = () => {
           <p className={classes.title}>contact with us</p>
           <ul className={classes["contact-info"]}>
             <li>
-              <p className={classes.location}>
+              <a className={classes.location}>
                 <FaLocationDot /> 678 Pisa Ava, Chicago, IL 60611
-              </p>
+              </a>
             </li>
             <li>
-              <p>
+              <a href="tel:(312) 593-2744">
                 <FaPhoneAlt /> (312) 593-2744
-              </p>
+              </a>
             </li>
             <li>
-              <p>
+              <a href="mailto:customer@littelemon.com">
                 <FaEnvelope />
                 customer@littelemon.com
-              </p>
+              </a>
             </li>
           </ul>
         </div>

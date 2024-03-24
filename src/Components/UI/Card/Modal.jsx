@@ -10,9 +10,9 @@ const ModalOverlay = (props) => {
   let classForCard = styles.modal;
 
   switch (props.id) {
-    case "confirmMes":
-      classForCard = classForCard + ` ${styles["confirm-mes"]}`;
-      break;
+    // case "confirmMes":
+    //   classForCard = classForCard + ` ${styles["confirm-mes"]}`;
+    //   break;
     case "formCard":
       classForCard = classForCard + ` ${styles["modal-form"]}`;
       break;

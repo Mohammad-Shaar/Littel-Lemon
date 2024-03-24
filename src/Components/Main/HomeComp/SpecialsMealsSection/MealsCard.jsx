@@ -35,7 +35,7 @@ const MealsCard = () => {
 
   return (
     <>
-      <div className={classes["meals-grid"]}>{mealsList}</div>
+      <ul className={classes["meals-grid"]}>{mealsList}</ul>
       {content}
     </>
   );
