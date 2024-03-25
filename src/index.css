@@ -99,7 +99,7 @@ p {
 .button {
   font-family: "Markazi Text", serif;
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.4em;
   padding: 0.4rem 1.1rem;
   border-radius: 15px;
   background-color: var(--primary-color-two);

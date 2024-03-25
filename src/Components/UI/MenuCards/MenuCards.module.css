@@ -45,3 +45,9 @@
   font-size: 1rem;
   align-self: self-end;
 }
+
+@media (max-width: 395px) {
+  .menu-card .details {
+    padding: 0.2rem 0.6rem;
+  }
+}

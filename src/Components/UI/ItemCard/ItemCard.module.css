@@ -1,0 +1,88 @@
+.img {
+  width: 40%;
+  min-width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0.8em 0.8em 1em rgba(1, 1, 1, 15%);
+}
+
+@media (max-width: 320px) {
+  .img {
+    min-width: 170px;
+  }
+}
+
+.title {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-bottom: black solid 1.5px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title > div {
+  justify-content: center;
+  column-gap: 2.4em;
+  row-gap: 0.3em;
+}
+
+.title .price {
+  color: var(--secondary-color-one);
+  padding-right: 0.6rem;
+}
+
+.title p {
+  margin: 0;
+}
+
+.desc {
+  text-align: center;
+  padding-inline: 1em;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 0.7rem;
+}
+
+.total-price {
+  display: flex;
+  align-items: baseline;
+  column-gap: 3em;
+}
+
+.total {
+  font-size: 1.2em;
+}
+
+.item-amount {
+  display: inline-block;
+  font-size: 1.2em;
+  margin-left: 0.7rem;
+}
+
+.actions {
+  margin: 0.8rem 0 0.4rem;
+}
+
+.actions button {
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-left: 0.7rem;
+  padding: 0.5rem 0.9rem;
+  color: black;
+}
+
+.actions button:hover,
+.actions button:active {
+  border: 1px solid transparent;
+  background-color: var(--hover-button);
+  transition: 0.3s ease;
+}
