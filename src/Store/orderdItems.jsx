@@ -28,20 +28,9 @@ const orderdItems = createSlice({
     addItem(state, action) {
       const newItem = action.payload;
       const exsistingItem = state.item.find((item) => item.id === newItem.id);
-      if (exsistingItem) {
-        exsistingItem.amount++;
-        exsistingItem.amountPrice = exsistingItem.amountPrice + newItem.price;
-        state.totalPrice = state.totalPrice + exsistingItem.amountPrice;
-      } else {
-        state.item.push({
-          id: newItem.id,
-          title: newItem.title,
-          price: newItem.price,
-          amount: newItem.amount,
-          amountPrice: newItem.amountPrice,
-        });
-        state.totalPrice = state.totalPrice + newItem.price;
-      }
+      exsistingItem.amount++;
+      exsistingItem.amountPrice = exsistingItem.amountPrice + newItem.price;
+      state.totalPrice = state.totalPrice + exsistingItem.amountPrice;
     },
     removeItem(state, action) {
       const id = action.payload;

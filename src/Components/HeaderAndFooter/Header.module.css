@@ -5,6 +5,7 @@
 .header nav {
   justify-content: space-between;
   overflow: visible;
+  column-gap: 0.7em;
 }
 
 @media (max-width: 450px) {
@@ -33,5 +34,11 @@
   .brger-icon {
     display: block;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 350px) {
+  .header nav {
+    flex-wrap: nowrap;
   }
 }

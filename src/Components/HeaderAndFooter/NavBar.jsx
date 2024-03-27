@@ -7,7 +7,7 @@ const NavBar = (props) => {
   const dispatch = useDispatch();
   const logState = useSelector((state) => state.logInState.isLogIn);
 
-  const logHandler = (props) => {
+  const logHandler = () => {
     dispatch(logInAction.togelLogCard());
   };
   return (

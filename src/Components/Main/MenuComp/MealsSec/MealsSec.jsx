@@ -3,18 +3,12 @@ import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
 import classes from "./MealsSec.module.css";
 import ItemCard from "../../../UI/ItemCard/ItemCard";
-import { useSelector } from "react-redux";
 
 const MealsSec = () => {
   const { id } = useParams();
   const { meals, isLodding, hasError } = useFetch(
     "http://localhost:3000/menu?category=meals"
   );
-
-  const productInCard = useSelector((state) => state.orderdItems.item);
-  const productInCardtt = useSelector((state) => state.orderdItems.totalPrice);
-  console.log(productInCard);
-  console.log(productInCardtt);
 
   const mealsList =
     meals.length !== 0
