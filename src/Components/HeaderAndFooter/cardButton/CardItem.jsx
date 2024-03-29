@@ -1,24 +1,31 @@
-// import classes from "./CardItem.module.css";
+import classes from "./CardItem.module.css";
+import { useDispatch } from "react-redux";
+import { orderdItemsAction } from "../../../Store/orderdItems";
 
-const CardItem = (props) => {
-  // const price = `$${props.price.toFixed(2)}`;
+const CardItem = ({ id, title, price, amount }) => {
+  const dispatch = useDispatch();
 
-  // const listClasses = `${classes["cart-item"]} ${
-  //   props.disabelBtn ? classes["cart-item-block"] : ""
-  // }`;
+  const removeItemHandler = () => {
+    dispatch(orderdItemsAction.removeItem({ id }));
+  };
+
+  const addItemHandler = () => {
+    dispatch(orderdItemsAction.addItem({ id }));
+  };
+
   return (
-    <li>
-      {/* <div>
-        <h2>{props.title}</h2>
+    <li className={classes["cart-item"]}>
+      <div>
+        <p className={classes.title}>{title}</p>
         <div className={classes.summary}>
-          <span className={classes.price}>{price}</span>
-          <span className={classes.amount}>x {props.amount}</span>
+          <p className={classes.price}>${price.toFixed(2)}</p>
+          <span className={classes.amount}>x {amount}</span>
         </div>
       </div>
       <div className={classes.actions}>
-        <button>−</button>
-        <button>+</button>
-      </div> */}
+        <button onClick={removeItemHandler}>−</button>
+        <button onClick={addItemHandler}>+</button>
+      </div>
     </li>
   );
 };

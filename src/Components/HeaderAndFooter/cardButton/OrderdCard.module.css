@@ -3,11 +3,11 @@
   justify-content: space-around;
   align-items: center;
   font-family: "Markazi Text", serif;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   cursor: pointer;
   color: var(--highlight-color-two);
   background-color: white;
-  padding: 0.3rem 0.8rem;
+  padding: 0.3em 0.8em;
   border: 1px var(--primary-color-one) solid;
   border-radius: 15px;
 }
@@ -21,9 +21,9 @@
 }
 
 .icon {
-  width: 1.35rem;
-  height: 1.35rem;
-  margin-right: 0.5rem;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.5em;
 }
 
 .word {

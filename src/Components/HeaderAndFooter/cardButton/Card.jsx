@@ -12,9 +12,8 @@ const Card = () => {
     dispatch(orderdCardAction.togelOrderdCard());
   };
 
-  const orderdItems = useSelector((state) => state.orderdItems.item);
+  const orderdItems = useSelector((state) => state.orderdItems.items);
   const totalPrice = useSelector((state) => state.orderdItems.totalPrice);
-
   return (
     <Modal onClose={closeModuleHandler} id="orderCard">
       <>
@@ -22,19 +21,20 @@ const Card = () => {
           {orderdItems.map((item) => (
             <CardItem
               key={item.id}
+              id={item.id}
               title={item.title}
-              price={item.price}
+              price={item.amountPrice}
               amount={item.amount}
             />
           ))}
         </ul>
         <div className={styles.total}>
           <span>Total </span>
-          <span>${totalPrice}</span>
+          <span>${totalPrice.toFixed(2)}</span>
         </div>
         <div className={styles.actions}>
           <button
-            className={styles["button--alt"]}
+            className={`button ${styles["button--alt"]}`}
             onClick={closeModuleHandler}
           >
             Close

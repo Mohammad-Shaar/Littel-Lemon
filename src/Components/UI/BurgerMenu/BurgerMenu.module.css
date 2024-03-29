@@ -1,5 +1,6 @@
 .hamburger {
   position: relative;
+  top: -3px;
 }
 
 .hamburger-top {

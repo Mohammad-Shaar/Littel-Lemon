@@ -3,44 +3,50 @@ import { createSlice } from "@reduxjs/toolkit";
 const orderdItems = createSlice({
   name: "cartItem",
   initialState: {
-    item: [],
+    items: [],
     totalPrice: 0,
   },
   reducers: {
     addItems(state, action) {
       const newItem = action.payload;
-      const exsistingItem = state.item.find((item) => item.id === newItem.id);
-      if (exsistingItem) {
-        exsistingItem.amount = exsistingItem.amount + newItem.amount;
-        exsistingItem.amountPrice = exsistingItem.price * exsistingItem.amount;
-        state.totalPrice = state.totalPrice + exsistingItem.amountPrice;
+      const existingItem = state.items.find((item) => item.id === newItem.id);
+
+      if (existingItem) {
+        existingItem.amount += newItem.amount;
+        existingItem.amountPrice = existingItem.price * existingItem.amount;
       } else {
-        state.item.push({
-          id: newItem.id,
-          title: newItem.title,
-          price: newItem.price,
-          amount: newItem.amount,
-          amountPrice: newItem.amountPrice,
+        state.items.push({
+          ...newItem,
+          amountPrice: newItem.price * newItem.amount,
         });
-        state.totalPrice = state.totalPrice + newItem.amountPrice;
       }
+      state.totalPrice += newItem.amount * newItem.price;
     },
     addItem(state, action) {
-      const newItem = action.payload;
-      const exsistingItem = state.item.find((item) => item.id === newItem.id);
-      exsistingItem.amount++;
-      exsistingItem.amountPrice = exsistingItem.amountPrice + newItem.price;
-      state.totalPrice = state.totalPrice + exsistingItem.amountPrice;
+      const addedItem = action.payload;
+      const existingItem = state.items.find((item) => item.id === addedItem.id);
+      if (existingItem) {
+        existingItem.amount++;
+        existingItem.amountPrice += existingItem.price;
+        state.totalPrice += existingItem.price;
+      }
     },
     removeItem(state, action) {
-      const id = action.payload;
-      const exsistingItem = state.item.find((item) => item.id === id);
-      if (exsistingItem.amount === 1) {
-        state.item = state.item.filter((item) => item.id !== id);
-      } else {
-        exsistingItem.amount--;
-        exsistingItem.amountPrice =
-          exsistingItem.amountPrice - exsistingItem.price;
+      const removedItem = action.payload;
+      const existingItem = state.items.find(
+        (item) => item.id === removedItem.id
+      );
+
+      if (existingItem) {
+        state.totalPrice -= existingItem.price;
+        if (existingItem.amount === 1) {
+          state.items = state.items.filter(
+            (item) => item.id !== removedItem.id
+          );
+        } else {
+          existingItem.amount--;
+          existingItem.amountPrice -= existingItem.price;
+        }
       }
     },
   },
