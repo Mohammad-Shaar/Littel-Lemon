@@ -81,7 +81,7 @@ const LogIn = () => {
           onBlur={firstNameBlurHandler}
           onChange={firstNameChangeHandler}
           input={{
-            id: "firstName",
+            id: "userFirstName",
             name: "firstName",
             autoComplete: "name",
             type: "text",
@@ -96,7 +96,7 @@ const LogIn = () => {
           onBlur={emailBlurHandler}
           onChange={emailChangeHandler}
           input={{
-            id: "email",
+            id: "userEmail",
             name: "email",
             autoComplete: "email",
             type: "text",

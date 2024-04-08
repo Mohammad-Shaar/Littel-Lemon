@@ -3,7 +3,7 @@ import classes from "./Input.module.css";
 const Input = (props) => {
   let errorMassege;
 
-  switch (props.input.id) {
+  switch (props.input.name) {
     case "firstName":
       errorMassege = `First name shouldn't be embty`;
       break;

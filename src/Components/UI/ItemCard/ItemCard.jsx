@@ -1,6 +1,7 @@
-import { useReducer } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useReducer, useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { orderdItemsAction } from "../../../Store/orderdItems";
 import useFetch from "../../../Hooks/use-fetch";
 import Modal from "../Card/Modal";
@@ -19,11 +20,14 @@ const reducer = (state, action) => {
 
 const ItemCard = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { meals, isLodding, hasError } = useFetch(
     `http://localhost:3000/menu?id=${id}`
   );
   const [state, dispatchFn] = useReducer(reducer, { amount: 1 });
+  const [warningMassege, setWarningMassege] = useState(undefined);
+  const logIn = useSelector((state) => state.logInState.isLogIn);
 
   let content;
   if (isLodding) {
@@ -45,6 +49,12 @@ const ItemCard = () => {
   }
 
   const orderHandler = () => {
+    if (!logIn) {
+      setWarningMassege(
+        <p className={classes.errorMassege}>You should login first!</p>
+      );
+      return;
+    }
     dispatch(
       orderdItemsAction.addItems({
         id: mealDetails.id,
@@ -54,6 +64,7 @@ const ItemCard = () => {
         amountPrice: Number(totalPrice),
       })
     );
+    navigate("..");
   };
 
   return (
@@ -91,10 +102,11 @@ const ItemCard = () => {
           Cancel
         </Link>
         {!content && (
-          <Link to=".." className="link" onClick={orderHandler}>
+          <Link className="link" onClick={orderHandler}>
             Add to cart
           </Link>
         )}
+        {warningMassege}
       </div>
     </Modal>
   );

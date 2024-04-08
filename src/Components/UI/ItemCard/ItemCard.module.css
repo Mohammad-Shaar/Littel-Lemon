@@ -46,8 +46,18 @@
 .btns {
   display: flex;
   justify-content: center;
+  position: relative;
   gap: 1em;
-  margin-top: 0.7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.errorMassege {
+  font-size: 0.9em;
+  bottom: -22px;
+  color: var(--secondary-color-one);
+  position: absolute;
+  margin: 0;
 }
 
 .total-price {
@@ -84,6 +94,17 @@
   margin-left: 0.7rem;
   padding: 0.5rem 0.9rem;
   color: black;
+}
+
+@media (max-width: 320px) {
+  .item-amount {
+    margin-left: 0.55rem;
+  }
+
+  .actions button {
+    padding: 0.4rem 0.7rem;
+    margin-left: 0.55rem;
+  }
 }
 
 .actions button:hover,
