@@ -56,6 +56,12 @@
   column-gap: 3em;
 }
 
+@media (max-width: 380px) {
+  .total-price {
+    column-gap: 1em;
+  }
+}
+
 .total {
   font-size: 1.2em;
 }

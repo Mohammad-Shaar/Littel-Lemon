@@ -5,11 +5,6 @@
   margin-top: 0.7rem;
 }
 
-.actions .button--alt {
-  color: var(--highlight-color-two);
-  background-color: transparent;
-}
-
 .warning {
   text-align: center;
   font-size: 1.2rem;

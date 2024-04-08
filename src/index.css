@@ -112,6 +112,17 @@ p {
   transition: 0.3s ease;
 }
 
+.button--alt {
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: 1px solid var(--highlight-color-two);
+}
+
+.button--alt:hover,
+.button--alt:active {
+  border: 1px solid transparent;
+}
+
 /* General Countainer Sitings
 ========================================================================= */
 .container {

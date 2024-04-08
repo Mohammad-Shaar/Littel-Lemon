@@ -1,3 +1,14 @@
+.message {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  color: var(--highlight-color-two);
+  border-bottom: 2px solid var(--highlight-color-two);
+}
+
 .cart-items {
   width: 100%;
   text-align: initial;
@@ -26,15 +37,15 @@
   gap: 1em;
 }
 
-.actions button {
+/* .actions .button--alt {
   background-color: transparent;
   border: 1px solid var(--highlight-color-two);
 }
 
-.actions button:hover,
-.actions button:active {
+.actions .button--alt:hover,
+.actions .button--alt:active {
   border: 1px solid transparent;
-}
+} */
 
 .button:disabled,
 .button:disabled:hover,

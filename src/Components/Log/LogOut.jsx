@@ -20,13 +20,10 @@ const LogOut = () => {
     <Modal onClose={closeHandler} id="formCard">
       <p className={classes.warning}>Are you sure you want to log out?</p>
       <div className={classes.actions}>
-        <button className={`button ${classes.button}`} onClick={closeHandler}>
+        <button className={`button`} onClick={closeHandler}>
           No
         </button>
-        <button
-          className={`button ${classes["button--alt"]}`}
-          onClick={logOutHandler}
-        >
+        <button className={`button button--alt`} onClick={logOutHandler}>
           Yes
         </button>
       </div>

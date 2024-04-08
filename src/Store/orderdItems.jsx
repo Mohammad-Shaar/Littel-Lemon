@@ -21,6 +21,7 @@ const orderdItems = createSlice({
         });
       }
       state.totalPrice += newItem.amount * newItem.price;
+      // console.log(state.totalPrice);
     },
     addItem(state, action) {
       const addedItem = action.payload;
@@ -38,7 +39,7 @@ const orderdItems = createSlice({
       );
 
       if (existingItem) {
-        state.totalPrice -= existingItem.price;
+        state.totalPrice = state.totalPrice.toFixed(2) - existingItem.price;
         if (existingItem.amount === 1) {
           state.items = state.items.filter(
             (item) => item.id !== removedItem.id

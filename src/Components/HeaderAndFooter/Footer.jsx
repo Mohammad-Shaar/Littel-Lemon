@@ -7,7 +7,6 @@ import {
   FaEnvelope,
   FaPhoneAlt,
 } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 import classes from "./Footer.module.css";
 import footerLogo from "../../assets/footer-logo.png";
 
@@ -38,11 +37,6 @@ const Footer = () => {
         <div>
           <p className={classes.title}>contact with us</p>
           <ul className={classes["contact-info"]}>
-            <li>
-              <a className={classes.location}>
-                <FaLocationDot /> 678 Pisa Ava, Chicago, IL 60611
-              </a>
-            </li>
             <li>
               <a href="tel:(312) 593-2744">
                 <FaPhoneAlt /> (312) 593-2744

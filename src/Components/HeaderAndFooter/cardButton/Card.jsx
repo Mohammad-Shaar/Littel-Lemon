@@ -14,9 +14,13 @@ const Card = () => {
 
   const orderdItems = useSelector((state) => state.orderdItems.items);
   const totalPrice = useSelector((state) => state.orderdItems.totalPrice);
+
+  let isItemsEmpty = orderdItems.length === 0;
+
   return (
     <Modal onClose={closeModuleHandler} id="orderCard">
       <>
+        {isItemsEmpty && <p className={styles.message}>Nothing here yet</p>}
         <ul className={styles["cart-items"]}>
           {orderdItems.map((item) => (
             <CardItem
@@ -33,12 +37,14 @@ const Card = () => {
           <span>${totalPrice.toFixed(2)}</span>
         </div>
         <div className={styles.actions}>
-          <button
-            className={`button ${styles["button--alt"]}`}
-            onClick={closeModuleHandler}
-          >
+          <button className="button button--alt" onClick={closeModuleHandler}>
             Close
           </button>
+          {!isItemsEmpty && (
+            <button className={`button`} onClick={closeModuleHandler}>
+              Order
+            </button>
+          )}
         </div>
       </>
     </Modal>
