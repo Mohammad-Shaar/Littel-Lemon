@@ -8,7 +8,7 @@ const SecoundSection = () => {
     <section className={classes.secound}>
       <div className="container">
         <div className={classes["center-link"]}>
-          <button className="button" form="confirm-form">
+          <button className="button" form="confirm-reservation">
             Confirm Reservation
           </button>
         </div>

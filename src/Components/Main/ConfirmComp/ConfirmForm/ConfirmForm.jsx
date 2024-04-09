@@ -81,7 +81,7 @@ const ConfirmForm = () => {
     <>
       {showConfirmingCard && <ConfirmingMessage onClose={closeCardHandler} />}
       <form
-        id="confirm-form"
+        id="confirm-reservation"
         onSubmit={submitHandler}
         className={`grid ${classes["grid-mob"]}`}
       >
@@ -152,6 +152,7 @@ const ConfirmForm = () => {
             ref={specialRequestsRef}
             id="note"
             className={classes.textarea}
+            placeholder="type here.."
             name="note"
           ></textarea>
         </div>

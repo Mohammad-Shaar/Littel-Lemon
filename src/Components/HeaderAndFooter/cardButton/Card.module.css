@@ -1,5 +1,5 @@
 .message {
-  width: 100%;
+  width: 80%;
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
@@ -10,24 +10,40 @@
 }
 
 .cart-items {
-  width: 100%;
+  width: 80%;
   text-align: initial;
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 20rem;
+  max-height: 15rem;
   overflow: auto;
 }
 
 .total {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
   color: var(--highlight-color-two);
-  margin: 1rem 0.25rem;
+  margin: 0.5rem 0.25rem;
+}
+
+@media (max-width: 580px) {
+  .message,
+  .cart-items,
+  .total {
+    width: 90%;
+  }
+}
+
+@media (max-width: 430px) {
+  .message,
+  .cart-items,
+  .total {
+    width: 100%;
+  }
 }
 
 .actions {
@@ -36,16 +52,6 @@
   align-items: center;
   gap: 1em;
 }
-
-/* .actions .button--alt {
-  background-color: transparent;
-  border: 1px solid var(--highlight-color-two);
-}
-
-.actions .button--alt:hover,
-.actions .button--alt:active {
-  border: 1px solid transparent;
-} */
 
 .button:disabled,
 .button:disabled:hover,

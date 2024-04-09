@@ -111,7 +111,7 @@ const LogIn = () => {
           onChange={passwordChangeHandler}
           input={{
             id: "password",
-            name: "Password",
+            name: "password",
             autoComplete: "off",
             type: "Password",
             placeholder: "*****",
