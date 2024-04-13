@@ -7,7 +7,7 @@ const ConfirmingMessage = (props) => {
       <p className={classes.message}>
         Your reservation has been confirmed, we are waiting for you.
       </p>
-      <button className="button" onClick={props.onClose}>
+      <button className="button button--alt" onClick={props.onClose}>
         Close
       </button>
     </Modal>

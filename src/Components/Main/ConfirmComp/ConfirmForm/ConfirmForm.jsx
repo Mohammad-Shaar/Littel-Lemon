@@ -9,11 +9,15 @@ import classes from "./ConfirmForm.module.css";
 import UserReserveOption from "./UserReserveOption";
 
 const ConfirmForm = () => {
+  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [hasError, setHasError] = useState(null);
   const [showWarning, setShowWarning] = useState(false);
   const [showConfirmingCard, setShowConfirmingCard] = useState(false);
   const specialRequestsRef = useRef("");
   const dispatch = useDispatch();
   const optionValid = useSelector((state) => state.reservation.allNotValid);
+  const seating = useSelector((state) => state.confirming.seating);
+  const options = useSelector((state) => state.reservation.option);
   dispatch(reservationAction.notValidToSend());
 
   const {
@@ -62,14 +66,42 @@ const ConfirmForm = () => {
     enterdEmailIsValid &&
     enterdPhoneIsValid;
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     setShowWarning(false);
     if (allInputsValid && optionValid) {
-      resetFirstNameInput();
-      resetLastNameInput();
-      resetEmailInput();
-      resetPhoneInput();
+      try {
+        setHasError(null);
+        setIsSubmiting(true);
+        const response = await fetch("http://localhost:3000/reservations", {
+          method: "POST",
+          body: JSON.stringify({
+            firsName: enterdFirstName,
+            lastName: enterdLastName,
+            email: enterdEmail,
+            phoneNumber: enterdPhone,
+            options: {
+              ...options,
+              seating: seating,
+              specialRequests: specialRequestsRef.current.value,
+            },
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("");
+        }
+        setIsSubmiting(false);
+        resetFirstNameInput();
+        resetLastNameInput();
+        resetEmailInput();
+        resetPhoneInput();
+      } catch (err) {
+        setHasError("something went wrong!");
+      }
       specialRequestsRef.current.value = "";
       setShowConfirmingCard(true);
     } else {

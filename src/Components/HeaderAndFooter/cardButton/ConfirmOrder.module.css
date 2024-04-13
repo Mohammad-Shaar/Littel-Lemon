@@ -82,3 +82,9 @@
   cursor: not-allowed;
   background-color: #ccc;
 }
+
+.message {
+  text-align: center;
+  font-size: 1.4em;
+  color: var(--highlight-color-two);
+}
