@@ -73,6 +73,7 @@ const ConfirmForm = () => {
       try {
         setHasError(null);
         setIsSubmiting(true);
+        setShowConfirmingCard(true);
         const response = await fetch("http://localhost:3000/reservations", {
           method: "POST",
           body: JSON.stringify({
@@ -103,7 +104,7 @@ const ConfirmForm = () => {
         setHasError("something went wrong!");
       }
       specialRequestsRef.current.value = "";
-      setShowConfirmingCard(true);
+      setIsSubmiting(false);
     } else {
       setShowWarning(true);
     }
@@ -111,7 +112,13 @@ const ConfirmForm = () => {
 
   return (
     <>
-      {showConfirmingCard && <ConfirmingMessage onClose={closeCardHandler} />}
+      {showConfirmingCard && (
+        <ConfirmingMessage
+          isSubmiting={isSubmiting}
+          hasError={hasError}
+          onClose={closeCardHandler}
+        />
+      )}
       <form
         id="confirm-reservation"
         onSubmit={submitHandler}

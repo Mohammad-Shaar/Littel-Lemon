@@ -3,3 +3,9 @@
   font-size: 1.4em;
   color: var(--highlight-color-two);
 }
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: #ccc !important;
+  border: 1px solid transparent;
+}
