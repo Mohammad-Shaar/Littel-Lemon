@@ -4,6 +4,35 @@
   color: var(--highlight-color-two);
 }
 
+/* .loading {
+  animation: flash 2s ease-in-out infinite alternate;
+}
+
+@keyframes fade-slide-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+
+.loading {
+  animation: flash 2s ease-in-out infinite alternate;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .btn:disabled {
   cursor: not-allowed;
   background-color: #ccc !important;

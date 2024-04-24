@@ -13,7 +13,9 @@ const ConfirmingMessage = ({ isSubmiting, hasError, onClose }) => {
 
   return (
     <Modal id="confirmMes" onClose={onClose}>
-      <p className={classes.message}>{content}</p>
+      <p className={`${classes.message} ${isSubmiting ? classes.loading : ""}`}>
+        {content}
+      </p>
       <button
         className={`button button--alt ${classes.btn}`}
         onClick={onClose}
