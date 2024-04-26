@@ -47,10 +47,10 @@ const ConfirmOrder = (props) => {
     try {
       setHasError(null);
       setIsSubmiting(true);
-      const response = await fetch("http://localhost:3000/ordersOnline", {
+      const response = await fetch("http://localhost:3000/onlineorders", {
         method: "POST",
         body: JSON.stringify({
-          firsName: enterdFirstName,
+          firstName: enterdFirstName,
           phoneNumber: enterdPhoneNumber,
           location: enterdLocation,
           totalPrice: props.totalPrice,

@@ -7,11 +7,13 @@ const MealsCard = () => {
     "http://localhost:3000/specials"
   );
 
+  console.log(meals);
+
   const mealsList =
     meals.length !== 0
       ? meals.map((meal) => (
           <Card
-            key={meal.id}
+            key={meal._id}
             img={meal.img}
             title={meal.title}
             price={meal.price}
@@ -27,7 +29,7 @@ const MealsCard = () => {
 
   let content;
   if (isLodding) {
-    content = <p className={classes.loading}>Lodding...</p>;
+    content = <p className={`loading ${classes.loading}`}>Lodding...</p>;
   }
   if (hasError) {
     content = <p className={classes["p-center"]}>{hasError}</p>;

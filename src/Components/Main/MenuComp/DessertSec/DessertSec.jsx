@@ -5,19 +5,19 @@ import classes from "./DessertSec.module.css";
 
 const MealsSec = () => {
   const { meals, isLodding, hasError } = useFetch(
-    "http://localhost:3000/menu?category=desserts"
+    "http://localhost:3000/menuitems?category=desserts"
   );
 
   const mealsList =
     meals.length !== 0
       ? meals.map((meal) => (
           <MenuCards
-            key={meal.id}
+            key={meal._id}
             title={meal.title}
             price={meal.price}
             img={meal.img}
             desc={meal.desc}
-            id={meal.id}
+            id={meal._id}
           />
         ))
       : !isLodding &&
@@ -29,7 +29,7 @@ const MealsSec = () => {
 
   let content;
   if (isLodding) {
-    content = <p className={classes.loading}>Lodding...</p>;
+    content = <p className={`loading`}>Lodding...</p>;
   }
   if (hasError) {
     content = <p className={classes["p-center"]}>{hasError}</p>;

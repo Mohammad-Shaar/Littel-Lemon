@@ -27,7 +27,7 @@ const NavBar = (props) => {
       </li>
       <li onClick={props.onClick}>
         <NavLink
-          to="/Littel-Lemon/menu"
+          to="/Littel-Lemon/menuitems"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
           menu

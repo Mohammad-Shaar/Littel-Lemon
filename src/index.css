@@ -123,6 +123,23 @@ p {
   border: 1px solid transparent;
 }
 
+.loading {
+  color: var(--primary-color-one);
+  text-align: center;
+  font-weight: bold;
+  animation: flash 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 /* General Countainer Sitings
 ========================================================================= */
 .container {

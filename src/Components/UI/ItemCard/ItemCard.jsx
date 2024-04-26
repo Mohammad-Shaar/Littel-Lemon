@@ -23,7 +23,7 @@ const ItemCard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { meals, isLodding, hasError } = useFetch(
-    `http://localhost:3000/menu?id=${id}`
+    `http://localhost:3000/menuitems/${id}`
   );
   const [state, dispatchFn] = useReducer(reducer, { amount: 1 });
   const [warningMassege, setWarningMassege] = useState(undefined);
@@ -38,8 +38,8 @@ const ItemCard = () => {
 
   const mealDetails =
     meals.length !== 0
-      ? meals[0]
-      : !isLodding && !hasError && <p>Sorry, no meals available right now</p>;
+      ? meals
+      : !isLodding && !hasError && <p>Sorry, the meal is not available!</p>;
 
   let mealPrice;
   let totalPrice;
@@ -57,7 +57,7 @@ const ItemCard = () => {
     }
     dispatch(
       orderdItemsAction.addItems({
-        id: mealDetails.id,
+        id: mealDetails._id,
         title: mealDetails.title,
         price: Number(mealPrice),
         amount: state.amount,

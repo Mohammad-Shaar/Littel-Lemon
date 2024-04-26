@@ -19,7 +19,7 @@ const useFetch = (url) => {
 
       setMeals(data);
     } catch (err) {
-      setHasError("Somthing went wrong");
+      setHasError("Somthing went wrong!");
     }
     setIsLodding(false);
   }, [url]);

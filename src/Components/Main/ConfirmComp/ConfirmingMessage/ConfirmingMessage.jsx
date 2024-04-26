@@ -13,7 +13,7 @@ const ConfirmingMessage = ({ isSubmiting, hasError, onClose }) => {
 
   return (
     <Modal id="confirmMes" onClose={onClose}>
-      <p className={`${classes.message} ${isSubmiting ? classes.loading : ""}`}>
+      <p className={`${classes.message} ${isSubmiting ? "loading" : ""}`}>
         {content}
       </p>
       <button

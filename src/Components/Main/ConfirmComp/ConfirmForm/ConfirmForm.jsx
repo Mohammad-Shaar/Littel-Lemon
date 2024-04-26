@@ -77,7 +77,7 @@ const ConfirmForm = () => {
         const response = await fetch("http://localhost:3000/reservations", {
           method: "POST",
           body: JSON.stringify({
-            firsName: enterdFirstName,
+            firstName: enterdFirstName,
             lastName: enterdLastName,
             email: enterdEmail,
             phoneNumber: enterdPhone,

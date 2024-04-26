@@ -18,21 +18,3 @@
   text-align: center;
   font-weight: bold;
 }
-
-.loading {
-  color: var(--primary-color-one);
-  text-align: center;
-  font-weight: bold;
-  animation: flash 1s ease-in-out infinite alternate;
-}
-
-@keyframes fade-slide-in-from-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
