@@ -7,8 +7,8 @@ const LocationSec = () => {
         <h1>hours & location</h1>
         <p>1600 20th St</p>
         <p>Chicago, IL 60611</p>
-        <h2>open every day of week</h2>
-        <p>5 PM - 10 PM</p>
+        <h2>open every day</h2>
+        <p>5 PM - 1 AM</p>
       </div>
     </section>
   );

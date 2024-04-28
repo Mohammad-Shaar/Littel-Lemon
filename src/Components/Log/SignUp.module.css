@@ -1,0 +1,52 @@
+.sin-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.9rem;
+  text-align: initial;
+}
+
+.sin-form > * {
+  width: 100%;
+}
+
+@media (max-width: 580px) {
+  .sin-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 430px) {
+  .sin-form {
+    width: 100%;
+  }
+}
+
+.sin-form label {
+  color: var(--highlight-color-two) !important;
+}
+
+.sin-form input {
+  background-color: white !important;
+}
+
+.subBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 4px;
+}
+
+.subBtn button:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.errorMassege {
+  color: var(--secondary-color-one);
+  font-size: 0.9em;
+  margin: 0;
+}

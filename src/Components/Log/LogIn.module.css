@@ -1,58 +1,10 @@
-.log-form {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.9rem;
-  text-align: initial;
+.sinupMsg {
+  text-align: center;
+  margin: 0.3rem 0 0 0;
 }
 
-.log-form > * {
-  width: 100%;
-}
-
-@media (max-width: 580px) {
-  .log-form {
-    width: 90%;
-  }
-}
-
-@media (max-width: 430px) {
-  .log-form {
-    width: 100%;
-  }
-}
-
-.log-form label {
-  color: var(--highlight-color-two) !important;
-}
-
-.log-form input {
-  background-color: white !important;
-}
-
-.subBtn {
-  position: relative;
-  padding-top: 0.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.subBtn button:disabled {
-  cursor: not-allowed;
-  background-color: #ccc;
-}
-
-.errorMassege {
-  color: var(--secondary-color-one);
-  margin: -18px 0 8px 0;
-}
-
-.subBtn .errorMassege {
-  position: absolute;
-  top: -1em;
-  font-size: 0.9em;
-  color: var(--secondary-color-one);
-  margin: 0;
+.sinup {
+  display: inline-block;
+  text-decoration: underline;
+  cursor: pointer;
 }

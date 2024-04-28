@@ -7,8 +7,6 @@ const MealsCard = () => {
     "http://localhost:3000/specials"
   );
 
-  console.log(meals);
-
   const mealsList =
     meals.length !== 0
       ? meals.map((meal) => (
