@@ -6,15 +6,26 @@
   border-radius: 10px;
 }
 
+@media (max-width: 480px) {
+  .menu-card {
+    gap: 0.6rem;
+  }
+}
+
 .img {
   width: 30%;
   object-fit: cover;
   border-radius: 10px;
 }
 
+@media (max-width: 480px) {
+  .img {
+    width: 33%;
+  }
+}
+
 .title {
   display: flex;
-  gap: 0.4rem;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -34,6 +45,13 @@
   margin: 0;
 }
 
+.desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .item-link {
   text-align: center;
   color: var(--secondary-color-one);
@@ -44,9 +62,10 @@
 .menu-card .details {
   font-size: 1rem;
   align-self: self-end;
+  margin-top: 0.3em;
 }
 
-@media (max-width: 395px) {
+@media (max-width: 480px) {
   .menu-card .details {
     padding: 0.2rem 0.6rem;
   }

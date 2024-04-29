@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
+import classes from "./MenuItems.module.css";
 import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
-import classes from "./DrinkSec.module.css";
+import ItemCard from "../../../UI/ItemCard/ItemCard";
 
-const MealsSec = () => {
+const MealsSec = ({ items, idForIndex }) => {
   const { meals, isLodding, hasError } = useFetch(
-    "http://localhost:3000/menuitems?category=drinks"
+    `http://localhost:3000/menuitems?category=${items}`
   );
 
   const mealsList =
@@ -37,11 +38,12 @@ const MealsSec = () => {
 
   return (
     <>
-      <Outlet />
+      {!idForIndex && <Outlet />}
+      {idForIndex && <ItemCard />}
       <section className={classes.meals}>
         <div className="container">
-          <h1>Drinks:</h1>
-          <ul className={`grid ${classes.grid}`}>{mealsList}</ul>
+          <h1>{items}:</h1>
+          {!content && <ul className={`grid ${classes.grid}`}>{mealsList}</ul>}
           {content}
         </div>
       </section>

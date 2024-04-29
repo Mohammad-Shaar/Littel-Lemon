@@ -20,7 +20,7 @@
 
 .description {
   margin: 1rem 1.5rem;
-  color: var(--primary-color-one);
+  color: var(--highlight-color-two);
 }
 
 .price {

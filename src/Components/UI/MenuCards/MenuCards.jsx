@@ -10,7 +10,7 @@ const MenuCards = (props) => {
           <h2>{props.title}</h2>
           <p className={classes.price}>${props.price.toFixed(2)}</p>
         </div>
-        <p>{props.desc}</p>
+        <p className={classes.desc}>{props.desc}</p>
         <Link to={`${props.id}`} className={`link ${classes.details}`}>
           View Details
         </Link>

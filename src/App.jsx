@@ -10,9 +10,7 @@ import About from "./Pages/About";
 import Reservations from "./Pages/Reservations";
 import Confirm from "./Pages/Confirm";
 import RootMenuPage from "./Pages/RootMenuPage";
-import MealsSec from "./Components/Main/MenuComp/MealsSec/MealsSec";
-import DessertSec from "./Components/Main/MenuComp/DessertSec/DessertSec";
-import DrinkSec from "./Components/Main/MenuComp/DrinkSec/DrinkSec";
+import MenuItems from "./Components/Main/MenuComp/MenuItems/MenuItems";
 import ItemCard from "./Components/UI/ItemCard/ItemCard";
 
 const router = createBrowserRouter([
@@ -28,20 +26,20 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <MealsSec />,
+            element: <MenuItems items="meals" />,
           },
           {
             path: ":id",
-            element: <MealsSec />,
+            element: <MenuItems items="meals" idForIndex />,
           },
           {
             path: "desserts",
-            element: <DessertSec />,
+            element: <MenuItems items="desserts" />,
             children: [{ path: ":id", element: <ItemCard /> }],
           },
           {
             path: "drinks",
-            element: <DrinkSec />,
+            element: <MenuItems items="drinks" />,
             children: [{ path: ":id", element: <ItemCard /> }],
           },
         ],
