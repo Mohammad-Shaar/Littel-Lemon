@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { logInAction } from "../../Store/logInState";
+import { logInAction } from "../../Store/LogInState";
+import usePostData from "../../Hooks/use-PostData";
 import classes from "./SignUp.module.css";
 import useInput from "../../Hooks/use-input";
 import Input from "../UI/Input/Input";
 
 const SignUp = ({ onClickBack }) => {
   const dispatch = useDispatch();
-  const [isSubmiting, setIsSubmiting] = useState(false);
-  const [hasError, setHasError] = useState(null);
 
   const {
     enterdInput: enterdFirstName,
@@ -34,6 +33,18 @@ const SignUp = ({ onClickBack }) => {
     inputChangeHandler: passwordChangeHandler,
   } = useInput((value) => value.trim().length >= 4 && value.trim().length <= 8);
 
+  const { donePosting, isSubmiting, hasError, submitData } = usePostData(
+    "http://localhost:3000/register"
+  );
+
+  useEffect(() => {
+    if (donePosting) {
+      localStorage.setItem("isLogged", "1");
+      dispatch(logInAction.logIn());
+      dispatch(logInAction.togelLogCard());
+    }
+  }, [donePosting]);
+
   const disableBtn =
     enterdFirstNameIsValid &&
     enterdEmailIsValid &&
@@ -43,34 +54,11 @@ const SignUp = ({ onClickBack }) => {
   const submitSinUpHandler = async (e) => {
     e.preventDefault();
 
-    try {
-      setHasError(null);
-      setIsSubmiting(true);
-      const response = await fetch("http://localhost:3000/register", {
-        method: "POST",
-        body: JSON.stringify({
-          firstName: enterdFirstName,
-          email: enterdEmail,
-          password: enterdPassword,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const resData = await response.json();
-
-      if (!response.ok) {
-        throw new Error(resData.message);
-      }
-      localStorage.setItem("isLogged", "1");
-      setIsSubmiting(false);
-      dispatch(logInAction.logIn());
-      dispatch(logInAction.togelLogCard());
-    } catch (err) {
-      setHasError(err.message || "Something went wrong!");
-    }
-    setIsSubmiting(false);
+    await submitData(() => ({
+      firstName: enterdFirstName,
+      email: enterdEmail,
+      password: enterdPassword,
+    }));
   };
   return (
     <>

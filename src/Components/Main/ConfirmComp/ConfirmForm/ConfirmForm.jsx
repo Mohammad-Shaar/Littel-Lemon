@@ -1,7 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { reservationAction } from "../../../../Store/reservation";
 import { FaExclamationTriangle } from "react-icons/fa";
+import usePostData from "../../../../Hooks/use-PostData";
 import useInput from "../../../../Hooks/use-input";
 import Input from "../../../UI/Input/Input";
 import ConfirmingMessage from "../ConfirmingMessage/ConfirmingMessage";
@@ -9,15 +10,15 @@ import classes from "./ConfirmForm.module.css";
 import UserReserveOption from "./UserReserveOption";
 
 const ConfirmForm = () => {
-  const [isSubmiting, setIsSubmiting] = useState(false);
-  const [hasError, setHasError] = useState(null);
   const [showWarning, setShowWarning] = useState(false);
   const [showConfirmingCard, setShowConfirmingCard] = useState(false);
   const specialRequestsRef = useRef("");
   const dispatch = useDispatch();
+
   const optionValid = useSelector((state) => state.reservation.allNotValid);
   const seating = useSelector((state) => state.confirming.seating);
   const options = useSelector((state) => state.reservation.option);
+
   dispatch(reservationAction.notValidToSend());
 
   const {
@@ -56,6 +57,20 @@ const ConfirmForm = () => {
     reset: resetPhoneInput,
   } = useInput((value) => parseInt(value) == value && value.trim() !== "");
 
+  const { donePosting, isSubmiting, hasError, submitData } = usePostData(
+    "http://localhost:3000/reservations"
+  );
+
+  useEffect(() => {
+    if (donePosting) {
+      resetFirstNameInput();
+      resetLastNameInput();
+      resetEmailInput();
+      resetPhoneInput();
+      specialRequestsRef.current.value = "";
+    }
+  }, [donePosting]);
+
   const closeCardHandler = () => {
     setShowConfirmingCard(false);
   };
@@ -70,41 +85,19 @@ const ConfirmForm = () => {
     e.preventDefault();
     setShowWarning(false);
     if (allInputsValid && optionValid) {
-      try {
-        setHasError(null);
-        setIsSubmiting(true);
-        setShowConfirmingCard(true);
-        const response = await fetch("http://localhost:3000/reservations", {
-          method: "POST",
-          body: JSON.stringify({
-            firstName: enterdFirstName,
-            lastName: enterdLastName,
-            email: enterdEmail,
-            phoneNumber: enterdPhone,
-            options: {
-              ...options,
-              seating: seating,
-              specialRequests: specialRequestsRef.current.value,
-            },
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+      setShowConfirmingCard(true);
 
-        if (!response.ok) {
-          throw new Error("");
-        }
-        setIsSubmiting(false);
-        resetFirstNameInput();
-        resetLastNameInput();
-        resetEmailInput();
-        resetPhoneInput();
-      } catch (err) {
-        setHasError("something went wrong!");
-      }
-      specialRequestsRef.current.value = "";
-      setIsSubmiting(false);
+      await submitData(() => ({
+        firstName: enterdFirstName,
+        lastName: enterdLastName,
+        email: enterdEmail,
+        phoneNumber: enterdPhone,
+        options: {
+          ...options,
+          seating: seating,
+          specialRequests: specialRequestsRef.current.value,
+        },
+      }));
     } else {
       setShowWarning(true);
     }

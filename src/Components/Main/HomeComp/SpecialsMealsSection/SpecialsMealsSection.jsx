@@ -11,7 +11,7 @@ const SpecialsMealsSection = () => {
         </div>
         <MealsCard />
         <div className={classes["view-btn"]}>
-          <Link to="menu" className="link">
+          <Link to="menuitems" className="link">
             View Menu
           </Link>
         </div>

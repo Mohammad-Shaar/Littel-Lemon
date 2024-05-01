@@ -22,7 +22,6 @@
 .errorMassege {
   font-size: 0.8rem;
   color: var(--secondary-color-one);
-  top: -1px;
   position: absolute;
   margin: 0;
 }

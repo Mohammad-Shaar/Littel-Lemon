@@ -63,18 +63,8 @@
 }
 
 .errorMassege {
-  position: absolute;
-  bottom: -0.7em;
-  font-size: 0.8rem;
   color: var(--secondary-color-one);
-  margin: 0;
-}
-
-.actions .errorMassege {
-  position: absolute;
-  top: -1.3em;
   font-size: 0.9em;
-  color: var(--secondary-color-one);
   margin: 0;
 }
 
