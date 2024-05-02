@@ -4,11 +4,7 @@ import classes from "./MenuCards.module.css";
 const MenuCards = (props) => {
   return (
     <li className={classes["menu-card"]}>
-      <img
-        src={process.env.PUBLIC_URL + props.img}
-        className={classes.img}
-        loading="lazy"
-      />
+      <img src={`.${props.img}`} className={classes.img} loading="lazy" />
       <div className={classes.title}>
         <div className="flex">
           <h2>{props.title}</h2>

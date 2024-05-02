@@ -70,7 +70,7 @@ const ItemCard = () => {
       {content || (
         <>
           <img
-            src={process.env.PUBLIC_URL + mealDetails.img}
+            src={`.${mealDetails.img}`}
             className={classes.img}
             alt={mealDetails.title}
           />
