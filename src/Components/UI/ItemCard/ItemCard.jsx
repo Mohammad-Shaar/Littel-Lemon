@@ -22,9 +22,7 @@ const ItemCard = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { meals, isLodding, hasError } = useFetch(
-    `http://localhost:3000/menuitems/${id}`
-  );
+  const { meals, isLodding, hasError } = useFetch(`/menuitems/${id}`);
   const [state, dispatchFn] = useReducer(reducer, { amount: 1 });
   const [warningMassege, setWarningMassege] = useState(undefined);
   const logIn = useSelector((state) => state.logInState.isLogIn);

@@ -3,9 +3,7 @@ import classes from "./MealsCard.module.css";
 import Card from "../../../UI/Card/Card";
 
 const MealsCard = () => {
-  const { meals, isLodding, hasError } = useFetch(
-    "http://localhost:3000/specials"
-  );
+  const { meals, isLodding, hasError } = useFetch("/specials");
 
   const mealsList =
     meals.length !== 0

@@ -9,13 +9,16 @@ const usePostData = (url) => {
     try {
       setHasError(null);
       setIsSubmiting(true);
-      const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(getBody()),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://littel-lemon-back-end.onrender.com${url}`,
+        {
+          method: "POST",
+          body: JSON.stringify(getBody()),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         const resData = await response.json();

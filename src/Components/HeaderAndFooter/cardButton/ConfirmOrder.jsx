@@ -34,9 +34,8 @@ const ConfirmOrder = (props) => {
     inputChangeHandler: locationChangeHandler,
   } = useInput((value) => value.trim() !== "");
 
-  const { donePosting, isSubmiting, hasError, submitData } = usePostData(
-    "http://localhost:3000/onlineorders"
-  );
+  const { donePosting, isSubmiting, hasError, submitData } =
+    usePostData("/onlineorders");
 
   useEffect(() => {
     if (donePosting) {

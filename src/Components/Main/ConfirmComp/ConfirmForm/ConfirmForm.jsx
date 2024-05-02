@@ -57,9 +57,8 @@ const ConfirmForm = () => {
     reset: resetPhoneInput,
   } = useInput((value) => parseInt(value) == value && value.trim() !== "");
 
-  const { donePosting, isSubmiting, hasError, submitData } = usePostData(
-    "http://localhost:3000/reservations"
-  );
+  const { donePosting, isSubmiting, hasError, submitData } =
+    usePostData("/reservations");
 
   useEffect(() => {
     if (donePosting) {

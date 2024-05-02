@@ -35,9 +35,8 @@ const SignUp = ({ onClickBack }) => {
     inputChangeHandler: passwordChangeHandler,
   } = useInput((value) => value.trim().length >= 4 && value.trim().length <= 8);
 
-  const { donePosting, isSubmiting, hasError, submitData } = usePostData(
-    "http://localhost:3000/register"
-  );
+  const { donePosting, isSubmiting, hasError, submitData } =
+    usePostData("/register");
 
   useEffect(() => {
     if (donePosting) {

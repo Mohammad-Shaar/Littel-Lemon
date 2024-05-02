@@ -5,7 +5,7 @@ import MenuCards from "../../../UI/MenuCards/MenuCards";
 
 const MealsSec = ({ items }) => {
   const { meals, isLodding, hasError } = useFetch(
-    `http://localhost:3000/menuitems?category=${items}`
+    `/menuitems?category=${items}`
   );
 
   const mealsList =

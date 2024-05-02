@@ -9,7 +9,9 @@ const useFetch = (url) => {
     try {
       setIsLodding(true);
       setHasError(null);
-      const response = await fetch(url);
+      const response = await fetch(
+        `https://littel-lemon-back-end.onrender.com${url}`
+      );
 
       if (!response.ok) {
         throw new Error("");
