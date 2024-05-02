@@ -4,7 +4,7 @@ const Card = (props) => {
   return (
     <li className={classes.card}>
       <div>
-        <img src={props.img} loading="lazy" />
+        <img src={process.env.PUBLIC_URL + props.img} loading="lazy" />
       </div>
       <div className={classes.head}>
         <h2>{props.title}</h2>
