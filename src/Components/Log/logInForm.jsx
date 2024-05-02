@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logInAction } from "../../Store/LogInState";
 import usePostData from "../../Hooks/use-PostData";
@@ -8,6 +9,7 @@ import Input from "../UI/Input/Input";
 
 const LogInForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     enterdInput: enterdEmail,
@@ -33,7 +35,7 @@ const LogInForm = () => {
     if (donePosting) {
       localStorage.setItem("isLogged", "1");
       dispatch(logInAction.logIn());
-      dispatch(logInAction.togelLogCard());
+      navigate("..");
     }
   }, [donePosting]);
 

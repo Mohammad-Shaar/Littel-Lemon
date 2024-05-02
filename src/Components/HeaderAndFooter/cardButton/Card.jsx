@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { orderdCardAction } from "../../../Store/orderdCardState";
+import { useNavigate } from "react-router-dom";
 import Modal from "../../UI/Card/Modal";
 import CardItem from "./CardItem";
 import ConfirmOrder from "./confirmOrder";
@@ -9,11 +8,7 @@ import styles from "./Card.module.css";
 
 const Card = () => {
   const [confirm, setConfirm] = useState(false);
-  const dispatch = useDispatch();
-
-  const closeModuleHandler = () => {
-    dispatch(orderdCardAction.togelOrderdCard());
-  };
+  const navigate = useNavigate();
 
   const backHandler = () => {
     setConfirm(false);
@@ -25,7 +20,7 @@ const Card = () => {
   let isItemsEmpty = orderdItems.length === 0;
 
   return (
-    <Modal onClose={closeModuleHandler} id="orderCard">
+    <Modal onClose={() => navigate("..")} id="orderCard">
       <>
         {isItemsEmpty && <p className={styles.message}>Nothing here yet</p>}
         {!confirm && (
@@ -48,7 +43,7 @@ const Card = () => {
             <div className={styles.actions}>
               <button
                 className="button button--alt"
-                onClick={closeModuleHandler}
+                onClick={() => navigate("..")}
               >
                 Close
               </button>

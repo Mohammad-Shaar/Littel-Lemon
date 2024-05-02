@@ -1,23 +1,25 @@
-import { useDispatch } from "react-redux";
-import { orderdCardAction } from "../../../Store/orderdCardState";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./orderdCard.module.css";
 import CardIcon from "./CardIcon";
 
-const HeaderCardButton = () => {
-  const dispatch = useDispatch();
+const OrderdCard = () => {
+  const location = useLocation();
+  let orderdRoute = location.pathname;
+
+  if (!orderdRoute.endsWith("login")) {
+    orderdRoute += orderdRoute.endsWith("/") ? "orders" : "/orders";
+  }
+
   return (
-    <button
-      className={styles.button}
-      onClick={() => dispatch(orderdCardAction.togelOrderdCard())}
-    >
+    <Link to={orderdRoute} className={styles.button}>
       <span className={styles["icon"]}>
         <CardIcon />
       </span>
       <span>
         <span className={styles.word}>Your</span>Card
       </span>
-    </button>
+    </Link>
   );
 };
 
-export default HeaderCardButton;
+export default OrderdCard;

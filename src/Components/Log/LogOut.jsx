@@ -1,19 +1,21 @@
 import { useDispatch } from "react-redux";
 import { logInAction } from "../../Store/LogInState";
+import { useNavigate } from "react-router-dom";
 import classes from "./LogOut.module.css";
 import Modal from "../UI/Card/Modal";
 
 const LogOut = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const closeHandler = () => {
-    dispatch(logInAction.togelLogCard());
+    navigate("..");
   };
 
   const logOutHandler = () => {
     localStorage.removeItem("isLogged");
     dispatch(logInAction.logOut());
-    dispatch(logInAction.togelLogCard());
+    navigate("..");
   };
 
   return (

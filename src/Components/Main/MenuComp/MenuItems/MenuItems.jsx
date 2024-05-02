@@ -2,9 +2,8 @@ import { Outlet } from "react-router-dom";
 import classes from "./MenuItems.module.css";
 import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
-import ItemCard from "../../../UI/ItemCard/ItemCard";
 
-const MealsSec = ({ items, idForIndex }) => {
+const MealsSec = ({ items }) => {
   const { meals, isLodding, hasError } = useFetch(
     `http://localhost:3000/menuitems?category=${items}`
   );
@@ -38,8 +37,7 @@ const MealsSec = ({ items, idForIndex }) => {
 
   return (
     <>
-      {!idForIndex && <Outlet />}
-      {idForIndex && <ItemCard />}
+      <Outlet />
       <section className={classes.meals}>
         <div className="container">
           <h1>{items}:</h1>

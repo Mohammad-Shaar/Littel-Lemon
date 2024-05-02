@@ -12,6 +12,15 @@ import Confirm from "./Pages/Confirm";
 import RootMenuPage from "./Pages/RootMenuPage";
 import MenuItems from "./Components/Main/MenuComp/MenuItems/MenuItems";
 import ItemCard from "./Components/UI/ItemCard/ItemCard";
+import LogIn from "./Components/Log/LogIn";
+import LogOut from "./Components/Log/LogOut";
+import Card from "./Components/HeaderAndFooter/cardButton/Card";
+
+const routesForAllPages = [
+  { path: "login", element: <LogIn /> },
+  { path: "logout", element: <LogOut /> },
+  { path: "orders", element: <Card /> },
+];
 
 const router = createBrowserRouter([
   {
@@ -19,37 +28,60 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
+      {
+        path: "",
+        element: <Home />,
+        children: [...routesForAllPages],
+      },
       {
         path: "menuitems",
         element: <RootMenuPage />,
         children: [
           {
-            index: true,
+            path: "",
             element: <MenuItems items="meals" />,
+            children: [
+              { path: ":id", element: <ItemCard /> },
+              ...routesForAllPages,
+            ],
           },
-          {
-            path: ":id",
-            element: <MenuItems items="meals" idForIndex />,
-          },
+
           {
             path: "desserts",
             element: <MenuItems items="desserts" />,
-            children: [{ path: ":id", element: <ItemCard /> }],
+            children: [
+              { path: ":id", element: <ItemCard /> },
+              ...routesForAllPages,
+            ],
           },
           {
             path: "drinks",
             element: <MenuItems items="drinks" />,
-            children: [{ path: ":id", element: <ItemCard /> }],
+            children: [
+              { path: ":id", element: <ItemCard /> },
+              ...routesForAllPages,
+            ],
           },
         ],
       },
-      { path: "about", element: <About /> },
+      {
+        path: "about",
+        element: <About />,
+        children: [...routesForAllPages],
+      },
       {
         path: "reservations",
         children: [
-          { index: true, element: <Reservations /> },
-          { path: "confirm", element: <Confirm /> },
+          {
+            path: "",
+            element: <Reservations />,
+            children: [...routesForAllPages],
+          },
+          {
+            path: "confirm",
+            element: <Confirm />,
+            children: [...routesForAllPages],
+          },
         ],
       },
     ],

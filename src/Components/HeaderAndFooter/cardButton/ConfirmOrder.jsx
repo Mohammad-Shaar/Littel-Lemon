@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { orderdCardAction } from "../../../Store/orderdCardState";
+import { useNavigate } from "react-router-dom";
 import usePostData from "../../../Hooks/use-PostData";
 import classes from "./ConfirmOrder.module.css";
 import Input from "../../UI/Input/Input";
 import useInput from "../../../Hooks/use-input";
 
 const ConfirmOrder = (props) => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [submitingSucceed, setSubmitingSucceed] = useState(false);
   // const locationRef = useRef("");
 
@@ -150,7 +149,7 @@ const ConfirmOrder = (props) => {
             <button
               className="button button--alt"
               type="button"
-              onClick={() => dispatch(orderdCardAction.togelOrderdCard())}
+              onClick={() => navigate("..")}
             >
               Close
             </button>

@@ -1,15 +1,23 @@
-import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logInAction } from "../../Store/LogInState";
+import { NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import classes from "./NavBar.module.css";
 
 const NavBar = (props) => {
-  const dispatch = useDispatch();
+  const location = useLocation();
   const logState = useSelector((state) => state.logInState.isLogIn);
 
-  const logHandler = () => {
-    dispatch(logInAction.togelLogCard());
-  };
+  let loginRoute = location.pathname;
+  let logoutRoute = location.pathname;
+  // console.log(loginRoute);
+
+  if (!loginRoute.endsWith("login")) {
+    loginRoute += loginRoute.endsWith("/") ? "login" : "/login";
+  }
+
+  if (!logoutRoute.endsWith("logout")) {
+    logoutRoute += logoutRoute.endsWith("/") ? "logout" : "/logout";
+  }
+
   return (
     <ul
       className={`${classes["header-nav"]} ${
@@ -18,7 +26,7 @@ const NavBar = (props) => {
     >
       <li onClick={props.onClick}>
         <NavLink
-          to="/Littel-Lemon/"
+          to="/Littel-Lemon"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
           end
         >
@@ -49,11 +57,32 @@ const NavBar = (props) => {
           about
         </NavLink>
       </li>
-      <li onClick={props.onClick}>
-        <button className={classes.log} onClick={logHandler}>
-          {logState ? "LogOut" : "LogIn"}
-        </button>
-      </li>
+      {!logState && (
+        <li onClick={props.onClick}>
+          <NavLink
+            to={loginRoute}
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+            end
+          >
+            LogIn
+          </NavLink>
+        </li>
+      )}
+      {logState && (
+        <li onClick={props.onClick}>
+          <NavLink
+            to={logoutRoute}
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+            end
+          >
+            LogOut
+          </NavLink>
+        </li>
+      )}
     </ul>
   );
 };

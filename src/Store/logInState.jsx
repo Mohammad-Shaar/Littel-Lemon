@@ -4,7 +4,6 @@ const logInState = createSlice({
   name: "logInState",
   initialState: {
     isLogIn: false,
-    showLogCard: false,
   },
   reducers: {
     logIn(state) {
@@ -12,9 +11,6 @@ const logInState = createSlice({
     },
     logOut(state) {
       state.isLogIn = false;
-    },
-    togelLogCard(state) {
-      state.showLogCard = !state.showLogCard;
     },
   },
 });

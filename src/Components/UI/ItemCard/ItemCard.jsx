@@ -68,7 +68,7 @@ const ItemCard = () => {
   };
 
   return (
-    <Modal>
+    <Modal onClose={() => navigate("..")}>
       {content || (
         <>
           <img

@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { logInAction } from "../../Store/LogInState";
+import { useNavigate } from "react-router-dom";
 import classes from "./LogIn.module.css";
 import Modal from "../UI/Card/Modal";
 import SignUp from "./SignUp";
 import LogInForm from "./logInForm";
 
 const LogIn = () => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [signup, setSignup] = useState(false);
 
   const backHandler = () => {
@@ -15,7 +14,7 @@ const LogIn = () => {
   };
 
   return (
-    <Modal onClose={() => dispatch(logInAction.togelLogCard())} id="formCard">
+    <Modal onClose={() => navigate("..")} id="formCard">
       {!signup && <LogInForm />}
       {signup && <SignUp onClickBack={backHandler} />}
       {!signup && (
