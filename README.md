@@ -21,14 +21,14 @@ This is a full MERN Stack website for a restaurant. Users can see what we offer,
 
 ### What I learned
 
-In This project I applied all the skills and concepts I had learned so far, And it's include:
+In This project, I applied all the skills and concepts I had learned so far, it includes:
 
 - How to use **Redux toolkit** to manage the state of my website and write less code.
 - How to use **React-router** to create dynamic routes and navigate between different pages.
 - How to use **props** to pass data and events between components
 - How to use **hooks** to add state and effects to functional components.
 - Hooks also allowed me to create my own **custom hook**, which was a fun and challenging experience.
-- And also built a professional-looking **Forms** with basic validation for LogIn, Conforming orders.
+- I also built professional-looking **Forms** with basic validation for login and order confirmation.
 - I used **json-server** to simulate a RESTful API using a JSON file as the data source.
-- Then I built a basic back-end with **Express.js** and I used **Mongodb** as my database.
-- Finally, I doployed my by back-end on **Render** and my front-end on **gh-pages**.
+- Then I built a basic back-end with **Express.js**, and I used **MongoDB** as my database.
+- Finally, I deployed my back-end on **Render** and my front-end on **GitHub pages**.
