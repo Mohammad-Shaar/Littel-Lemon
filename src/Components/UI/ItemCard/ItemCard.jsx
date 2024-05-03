@@ -70,7 +70,7 @@ const ItemCard = () => {
       {content || (
         <>
           <img
-            src={`.${mealDetails.img}`}
+            src={mealDetails.img}
             className={classes.img}
             alt={mealDetails.title}
           />
