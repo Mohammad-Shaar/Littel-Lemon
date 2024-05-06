@@ -3,7 +3,7 @@ import classes from "./MealsCard.module.css";
 import Card from "../../../UI/Card/Card";
 
 const MealsCard = () => {
-  const { meals, isLodding, hasError } = useFetch("/specials");
+  const { meals, isLoading, hasError } = useFetch("/specials");
 
   const mealsList =
     meals.length !== 0
@@ -16,7 +16,7 @@ const MealsCard = () => {
             description={meal.description}
           />
         ))
-      : !isLodding &&
+      : !isLoading &&
         !hasError && (
           <p className={classes["p-center"]}>
             Sorry, No meals avilable right now
@@ -24,8 +24,8 @@ const MealsCard = () => {
         );
 
   let content;
-  if (isLodding) {
-    content = <p className={`loading ${classes.loading}`}>Lodding...</p>;
+  if (isLoading) {
+    content = <p className={`loading ${classes.loading}`}>Loading...</p>;
   }
   if (hasError) {
     content = <p className={classes["p-center"]}>{hasError}</p>;

@@ -4,7 +4,7 @@ import useFetch from "../../../../Hooks/use-fetch";
 import MenuCards from "../../../UI/MenuCards/MenuCards";
 
 const MealsSec = ({ items }) => {
-  const { meals, isLodding, hasError } = useFetch(
+  const { meals, isLoading, hasError } = useFetch(
     `/menuitems?category=${items}`
   );
 
@@ -20,7 +20,7 @@ const MealsSec = ({ items }) => {
             id={meal._id}
           />
         ))
-      : !isLodding &&
+      : !isLoading &&
         !hasError && (
           <p className={classes["p-center"]}>
             Sorry, No meals avilable right now
@@ -28,8 +28,8 @@ const MealsSec = ({ items }) => {
         );
 
   let content;
-  if (isLodding) {
-    content = <p className={`loading`}>Lodding...</p>;
+  if (isLoading) {
+    content = <p className={`loading`}>Loading...</p>;
   }
   if (hasError) {
     content = <p className={classes["p-center"]}>{hasError}</p>;

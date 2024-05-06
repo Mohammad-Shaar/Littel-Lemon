@@ -2,12 +2,12 @@ import { useState, useEffect, useCallback } from "react";
 
 const useFetch = (url) => {
   const [meals, setMeals] = useState([]);
-  const [isLodding, setIsLodding] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(null);
 
   const fetchMeals = useCallback(async () => {
     try {
-      setIsLodding(true);
+      setIsLoading(true);
       setHasError(null);
       const response = await fetch(
         `https://littel-lemon-back-end.onrender.com${url}`
@@ -23,14 +23,14 @@ const useFetch = (url) => {
     } catch (err) {
       setHasError("Something went wrong!");
     }
-    setIsLodding(false);
+    setIsLoading(false);
   }, [url]);
 
   useEffect(() => {
     fetchMeals();
   }, [fetchMeals]);
 
-  return { meals, isLodding, hasError };
+  return { meals, isLoading, hasError };
 };
 
 export default useFetch;

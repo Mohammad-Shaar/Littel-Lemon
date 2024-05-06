@@ -1,9 +1,9 @@
 import SimpleSlider from "../../../UI/Carousel/Carousel";
 import CommintCard from "../../../UI/CommintCard/CommintCard";
-import commint1 from "../../../../assets/commint1.png";
-import commint2 from "../../../../assets/commint2.png";
-import commint3 from "../../../../assets/commint3.png";
-import commint4 from "../../../../assets/commint4.png";
+import commint1 from "../../../../assets/commint1.jpg";
+import commint2 from "../../../../assets/commint2.jpg";
+import commint3 from "../../../../assets/commint3.jpg";
+import commint4 from "../../../../assets/commint4.jpg";
 
 const COMMiNTS = [
   {
