@@ -22,13 +22,13 @@ const ItemCard = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { meals, isLodding, hasError } = useFetch(`/menuitems/${id}`);
+  const { meals, isLoading, hasError } = useFetch(`/menuitems/${id}`);
   const [state, dispatchFn] = useReducer(reducer, { amount: 1 });
   const [warningMassege, setWarningMassege] = useState(undefined);
   const logIn = useSelector((state) => state.logInState.isLogIn);
 
   let content;
-  if (isLodding) {
+  if (isLoading) {
     content = <p>Loading...</p>;
   } else if (hasError) {
     content = <p>{hasError}</p>;
@@ -37,7 +37,7 @@ const ItemCard = () => {
   const mealDetails =
     meals.length !== 0
       ? meals
-      : !isLodding && !hasError && <p>Sorry, the meal is not available!</p>;
+      : !isLoading && !hasError && <p>Sorry, the meal is not available!</p>;
 
   let mealPrice;
   let totalPrice;
