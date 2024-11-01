@@ -9,9 +9,7 @@ const useFetch = (url) => {
     try {
       setIsLoading(true);
       setHasError(null);
-      const response = await fetch(
-        `https://littel-lemon-back-end.onrender.com${url}`
-      );
+      const response = await fetch(import.meta.env.VITE_API_URL + `${url}`);
 
       if (!response.ok) {
         throw new Error("");
